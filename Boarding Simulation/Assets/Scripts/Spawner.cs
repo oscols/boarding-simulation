@@ -326,12 +326,12 @@ public class Spawner : MonoBehaviour {
 
 		}
 		yield return new WaitForSeconds (continousSpawnRate);
-		// cap--; // OSCAR
+		cap--; // OSCAR
 		StartCoroutine (spawnContinously(start, goal, cap, continousSpawnRate));
 	}
 
 	public void continousSpawn(int startNode, int cap) {
-		cap = 6; // OSCAR
+		cap = 72; // OSCAR
 		int goal = map.goals[0];
 		if (customGoal != null) {
 			//OPT: Use dictionary in mapgen to get constant time access!

@@ -85,7 +85,9 @@ public class Agent : MonoBehaviour {
 			// preferredVelocity.x = 0; // OSCAR
 			// preferredVelocity.y = 0; // OSCAR
 			// preferredVelocity.z = 0; // OSCAR
-			
+
+			bool test1231 = map.allNodes [path [pathIndex]].isGoal;
+			UnityEngine.Debug.Log(test1231); //OSCAR
 			//New node reached
 			collision = false;
 			pathIndex += 1;
