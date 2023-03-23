@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Airplane.unity
+- path: Assets/Scenes/BackToFront.unity
   isLoaded: 1
   isActive: 1
