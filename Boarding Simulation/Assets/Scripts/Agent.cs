@@ -15,6 +15,7 @@ public class Agent : MonoBehaviour {
 	internal float densityAtAgentPosition;
 
 	internal bool stop = false; // OSCAR
+	internal bool stopAll = false; // OSCAR
 	internal int stopCount = 0; // OSCAR
 	internal Vector3 previousVelocity; // OSCAR
 	internal bool done = false;
@@ -67,11 +68,21 @@ public class Agent : MonoBehaviour {
 		transform.forward = velocity.normalized;
 		velocity = velocity + collisionAvoidanceVelocity;
 
+		if (stopAll) {
+			// UnityEngine.Debug.Log("IN STOP ALL"); //OSCAR
+			// velocity.x = 0.1f; // OSCAR
+			// velocity.z = 0.1f; // OSCAR
+			velocity.x = 0; // OSCAR
+			velocity.z = 0; // OSCAR
+		}
+
+		// Maybe if within radius, just stop?
+
 		if (stop) { // OSCAR
 			previousVelocity = velocity; // OSCAR
 			velocity.x = 0; // OSCAR
-			velocity.y = 0; // OSCAR
 			velocity.z = 0; // OSCAR
+			rbody.isKinematic = true;
 			if (stopCount == 0) {
 				// velocity.x = 0; // OSCAR
 				// velocity.y = 0; // OSCAR
@@ -141,6 +152,7 @@ public class Agent : MonoBehaviour {
 
 			//New node reached
 			collision = false;
+			// stopAll = false; // OSCAR
 			pathIndex += 1;
 			if (pathIndex >= path.Count) {
 				//Done
@@ -158,6 +170,7 @@ public class Agent : MonoBehaviour {
 			change = false;
 		} else {
 			collision = false;
+			// stopAll = false; // OSCAR
 			Vector3 nextDirection = ((map.allNodes [path [pathIndex]].getTargetPoint(transform.position)) - transform.position).normalized;
 			if (change && Vector3.Angle (previousDirection, nextDirection) > 20.0f && Grid.instance.smoothTurns) {
 				preferredVelocity = Vector3.RotateTowards (velocity.normalized, nextDirection, Grid.instance.dt*((35.0f - 400*Grid.instance.dt) * Mathf.PI / 180.0f),  15.0f).normalized;
@@ -232,7 +245,8 @@ public class Agent : MonoBehaviour {
 	internal void OnCollisionEnter(Collision c) {
 		collision = true;
 		if (stop) {
-			System.Threading.Thread.Sleep(4000);
+			// stopAll = true;
+			// System.Threading.Thread.Sleep(4000);
 			// stop = false;
 			// velocity = previousVelocity;
 			// UnityEngine.Debug.Log("COLLISION"); //OSCAR

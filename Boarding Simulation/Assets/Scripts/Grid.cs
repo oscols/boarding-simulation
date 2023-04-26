@@ -353,12 +353,53 @@ public class Grid : MonoBehaviour {
 	 * Handle pair-wise collision for a set of agents with given agent.
 	 **/ 
 	internal void handleCollision(int a, int row, int col, ref List<Agent> agentList) {
+		bool stopAll = false;
+		// OSCAR
+		// if (agentList[0].stop) {
+		// 	for(int i = 0; i < neighMatrix[row][col].Count; ++i) {
+		// 		int oa = neighMatrix [row] [col] [i];
+				
+		// 		agentList[oa].velocity.x = 0;
+		// 		agentList[oa].velocity.y = 0;
+		// 		agentList[oa].velocity.z = 0;				
+		// 	}
+		// } else {
+
+		// OSCAR
+		for (int i = 0; i < agentList.Count; ++i) {
+			if (!agentList[i].done) {
+				if (agentList[i].stop) {
+					stopAll = true;
+				}
+			}
+		}
+
+		// OSCAR
+		// for (int i = 0; i < agentList.Count; ++i) {
+		// 	if (stopAll) {
+		// 		agentList[i].stopAll = true; // OSCAR
+		// 		// UnityEngine.Debug.Log("TRUE"); //OSCAR
+		// 	} else {
+		// 		agentList[i].stopAll = false; // OSCAR
+		// 		// UnityEngine.Debug.Log("FALSE"); //OSCAR
+		// 	}
+		// }
+
 		if (row < 0 || col < 0 || row >= neighbourBins || col >= neighbourBins)
 			return;
 		for(int i = 0; i < neighMatrix[row][col].Count; ++i) {
 			int oa = neighMatrix [row] [col] [i];
 			if (a == oa )
 				continue;
+
+
+			// if (stopAll) {
+			// 	agentList[a].stopAll = true; // OSCAR
+			// 	// UnityEngine.Debug.Log("TRUE"); //OSCAR
+			// } else {
+			// 	agentList[a].stopAll = false; // OSCAR
+			// 	// UnityEngine.Debug.Log("FALSE"); //OSCAR
+			// }
 
 			// OSCAR - MIGHT BE USEFUL
 
@@ -386,10 +427,12 @@ public class Grid : MonoBehaviour {
 						agentList [a].collisionAvoidanceVelocity += dis.normalized * (2 * groupDis - dis.magnitude) * agentMaxSpeed; 
 					}
 				} else {
+					// UnityEngine.Debug.Log("PUSH"); //OSCAR
 					agentList [a].collisionAvoidanceVelocity += dis.normalized * (ringDiameter - dis.magnitude) * agentMaxSpeed; //Push away
 				}
 			}
 		}
+		// }
 	}
 
 	/**

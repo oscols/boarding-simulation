@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/BackToFrontNoLuggage.unity
+- path: Assets/Scenes/StandardBoarding.unity
   isLoaded: 1
   isActive: 1
