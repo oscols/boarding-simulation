@@ -360,6 +360,8 @@ public class Grid : MonoBehaviour {
 			if (a == oa )
 				continue;
 
+			// OSCAR - MIGHT BE USEFUL
+
 			Vector3 dis = agentList [a].transform.position - agentList [oa].transform.position;
 			if (dis.magnitude < ringDiameter) { //Assumption: ringDiameter > pxpy
 				if (agentList[a] is SubgroupAgent && agentList[oa] is SubgroupAgent && (agentList[a] as SubgroupAgent).c.tag.Equals ((agentList[oa] as SubgroupAgent).c.tag)) { //Allow modification of value later

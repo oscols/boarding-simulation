@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 public class Agent : MonoBehaviour {
 	public Vector3 preferredVelocity, continuumVelocity, collisionAvoidanceVelocity;
@@ -13,6 +14,9 @@ public class Agent : MonoBehaviour {
 	neighbourRightVelocityWeight, neighbourLeftVelocityWeight, neighbourUpperVelocityWeight, neighbourLowerVelocityWeight;
 	internal float densityAtAgentPosition;
 
+	internal bool stop = false; // OSCAR
+	internal int stopCount = 0; // OSCAR
+	internal Vector3 previousVelocity; // OSCAR
 	internal bool done = false;
 	internal bool noMap = false;
 	internal Vector3 noMapGoal;
@@ -62,6 +66,48 @@ public class Agent : MonoBehaviour {
 		velocity.y = 0f;
 		transform.forward = velocity.normalized;
 		velocity = velocity + collisionAvoidanceVelocity;
+
+		if (stop) { // OSCAR
+			previousVelocity = velocity; // OSCAR
+			velocity.x = 0; // OSCAR
+			velocity.y = 0; // OSCAR
+			velocity.z = 0; // OSCAR
+			if (stopCount == 0) {
+				// velocity.x = 0; // OSCAR
+				// velocity.y = 0; // OSCAR
+				// velocity.z = 0; // OSCAR
+				UnityEngine.Debug.Log("1"); //OSCAR
+				
+				Delay(3000).ContinueWith(_ => setPreviousVelocity());
+				stopCount++;
+			}
+
+			// Task.Delay(1000);
+			// velocity.x = 0; // OSCAR
+			// velocity.y = 0; // OSCAR
+			// velocity.z = 0; // OSCAR
+			// if (collision) {
+			// 	UnityEngine.Debug.Log("COLLISION"); //OSCAR
+			// }
+		}
+	}
+
+	internal void setPreviousVelocity() {
+		velocity = previousVelocity; 
+		stop = false;
+	}
+
+	internal static Task Delay(double milliseconds) {
+		var tcs = new TaskCompletionSource<bool>();
+		System.Timers.Timer timer = new System.Timers.Timer();
+		timer.Elapsed+=(obj, args) =>
+		{
+			tcs.TrySetResult(true);
+		};
+		timer.Interval = milliseconds;
+		timer.AutoReset = false;
+		timer.Start();
+		return tcs.Task;
 	}
 
 	internal bool canSeeNext(ref MapGen.map map, int modifier) {
@@ -86,8 +132,13 @@ public class Agent : MonoBehaviour {
 			// preferredVelocity.y = 0; // OSCAR
 			// preferredVelocity.z = 0; // OSCAR
 
-			bool test1231 = map.allNodes [path [pathIndex]].isGoal;
-			UnityEngine.Debug.Log(test1231); //OSCAR
+			bool turning = map.allNodes [path [pathIndex]].isGoal; //OSCAR
+			UnityEngine.Debug.Log(turning); //OSCAR
+			if (turning && stopCount == 0) {
+				// This only happens when they turn
+				stop = true;
+			}
+
 			//New node reached
 			collision = false;
 			pathIndex += 1;
@@ -147,6 +198,7 @@ public class Agent : MonoBehaviour {
 	 * Do animations.
 	 **/
 	internal void changePosition(ref MapGen.map map) {
+		// OSCAR - THIS MIGHT BE WHEN THEY ARE AT THE GOAL
 		if (done) {
 			return; // Dont do anything
 		} 
@@ -179,6 +231,13 @@ public class Agent : MonoBehaviour {
 
 	internal void OnCollisionEnter(Collision c) {
 		collision = true;
+		if (stop) {
+			System.Threading.Thread.Sleep(4000);
+			// stop = false;
+			// velocity = previousVelocity;
+			// UnityEngine.Debug.Log("COLLISION"); //OSCAR
+			// LAST SOLUTION: if stopCount == 0 -> sleep for 4s; stopCount++;
+		}
 	}
 	/**
 	 * Do a bilinear interpolation of surrounding densities and come up with a density at this agents position.
