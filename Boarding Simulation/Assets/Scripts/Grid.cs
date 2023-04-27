@@ -20,6 +20,7 @@ public class Grid : MonoBehaviour {
 	internal float ringDiameter;
 	internal float[] groupDistances;
 	internal bool usePresetGroupDistances;
+	internal bool slowDown; // OSCAR 
 	internal int cellsPerRow;
 	internal Main.LCPSolutioner solver;
 	internal LCPSolver mprgpSolver; //LCP solver instance
@@ -404,6 +405,10 @@ public class Grid : MonoBehaviour {
 			// 	// UnityEngine.Debug.Log("FALSE"); //OSCAR
 			// }
 
+			// if (slowDown) {
+			// 	agentList[oa].slowDown = true;
+			// }
+
 
 
 			// if (stopAll) {
@@ -435,10 +440,15 @@ public class Grid : MonoBehaviour {
 						}
 					}
 					if (dis.magnitude < 2 * groupDis) {
-				
 						agentList [a].collisionAvoidanceVelocity += dis.normalized * (2 * groupDis - dis.magnitude) * agentMaxSpeed; 
+						// agentList[a].collisionAvoidanceVelocity.x = 0; // OSCAR
+						// agentList[a].collisionAvoidanceVelocity.y = 0; // OSCAR
+						// agentList[a].collisionAvoidanceVelocity.z = 0; // OSCAR
 					}
 				} else {
+					// agentList[a].collisionAvoidanceVelocity.x = 0; // OSCAR
+					// agentList[a].collisionAvoidanceVelocity.y = 0; // OSCAR
+					// agentList[a].collisionAvoidanceVelocity.z = 0; // OSCAR
 					// UnityEngine.Debug.Log("PUSH"); //OSCAR
 					agentList [a].collisionAvoidanceVelocity += dis.normalized * (ringDiameter - dis.magnitude) * agentMaxSpeed; //Push away
 				}
@@ -466,16 +476,20 @@ public class Grid : MonoBehaviour {
 	 **/ 
 	internal void collisionHandling(ref List<Agent> agentList) {
 	//	check = new bool[agentList.Count, agentList.Count];
+
 		bool stopAll = false;
 		for (int i = 0; i < agentList.Count; ++i) {
 			if (agentList[i].stop) {
 				stopAll = true;
+				// slowDown = true;
 			}
 		}
 
 		if (!stopAll) {
 			for (int i = 0; i < agentList.Count; ++i) {
+				// slowDown = false;
 				agentList[i].stopAll = false;
+				// agentList[i].slowDown = false;
 			}
 		}
 

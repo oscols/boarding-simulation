@@ -17,6 +17,7 @@ public class Agent : MonoBehaviour {
 	internal bool stop = false; // OSCAR
 	internal bool stopAll = false; // OSCAR
 	internal bool stopForCollision = false; // OSCAR
+	internal bool slowDown = false; // OSCAR
 	internal int stopCount = 0; // OSCAR
 	internal Vector3 previousVelocity; // OSCAR
 	internal bool done = false;
@@ -33,6 +34,7 @@ public class Agent : MonoBehaviour {
 		animator = transform.gameObject.GetComponent<Animator> ();
 		rbody = transform.gameObject.GetComponent<Rigidbody> ();
 		//Which cell am i in currently?
+		// rbody.isKinematic = true;
 		calculateRowAndColumn();
 		if (!Grid.instance.colHandler && rbody != null) {
 			Destroy (rbody);
@@ -74,9 +76,15 @@ public class Agent : MonoBehaviour {
 			// UnityEngine.Debug.Log("IN STOP ALL"); //OSCAR
 			// velocity.x = 0.1f; // OSCAR
 			// velocity.z = 0.1f; // OSCAR
+			// rbody.isKinematic = true;
 			velocity.x = 0; // OSCAR
 			velocity.z = 0; // OSCAR
 		}
+
+		// if (slowDown) {
+		// 	velocity.x = 0.4f; // OSCAR
+		// 	velocity.z = 0.4f; // OSCAR
+		// }
 
 		// Maybe if within radius, just stop?
 
@@ -90,7 +98,6 @@ public class Agent : MonoBehaviour {
 				// velocity.x = 0; // OSCAR
 				// velocity.y = 0; // OSCAR
 				// velocity.z = 0; // OSCAR
-				UnityEngine.Debug.Log("1"); //OSCAR
 				
 				Delay(3000).ContinueWith(_ => setPreviousVelocity());
 				stopCount++;
@@ -148,7 +155,6 @@ public class Agent : MonoBehaviour {
 			// preferredVelocity.z = 0; // OSCAR
 
 			bool turning = map.allNodes [path [pathIndex]].isGoal; //OSCAR
-			UnityEngine.Debug.Log(turning); //OSCAR
 			if (turning && stopCount == 0) {
 				// This only happens when they turn
 				stop = true;
