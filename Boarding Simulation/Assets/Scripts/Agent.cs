@@ -16,6 +16,7 @@ public class Agent : MonoBehaviour {
 
 	internal bool stop = false; // OSCAR
 	internal bool stopAll = false; // OSCAR
+	internal bool stopForCollision = false; // OSCAR
 	internal int stopCount = 0; // OSCAR
 	internal Vector3 previousVelocity; // OSCAR
 	internal bool done = false;
@@ -68,6 +69,7 @@ public class Agent : MonoBehaviour {
 		transform.forward = velocity.normalized;
 		velocity = velocity + collisionAvoidanceVelocity;
 
+		// if (stopAll && stopForCollision) {
 		if (stopAll) {
 			// UnityEngine.Debug.Log("IN STOP ALL"); //OSCAR
 			// velocity.x = 0.1f; // OSCAR
@@ -79,7 +81,8 @@ public class Agent : MonoBehaviour {
 		// Maybe if within radius, just stop?
 
 		if (stop) { // OSCAR
-			previousVelocity = velocity; // OSCAR
+			// previousVelocity = velocity; // OSCAR
+			stopAll = true;
 			velocity.x = 0; // OSCAR
 			velocity.z = 0; // OSCAR
 			rbody.isKinematic = true;
@@ -104,8 +107,9 @@ public class Agent : MonoBehaviour {
 	}
 
 	internal void setPreviousVelocity() {
-		velocity = previousVelocity; 
+		// velocity = previousVelocity; 
 		stop = false;
+		stopAll = false;
 	}
 
 	internal static Task Delay(double milliseconds) {
@@ -244,6 +248,7 @@ public class Agent : MonoBehaviour {
 
 	internal void OnCollisionEnter(Collision c) {
 		collision = true;
+		// stopForCollision = true;
 		if (stop) {
 			// stopAll = true;
 			// System.Threading.Thread.Sleep(4000);
