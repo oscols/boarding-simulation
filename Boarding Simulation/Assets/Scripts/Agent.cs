@@ -71,6 +71,8 @@ public class Agent : MonoBehaviour {
 		transform.forward = velocity.normalized;
 		velocity = velocity + collisionAvoidanceVelocity;
 
+		// MAYBE MAKE AISLE WIDER BUT I WANT IT TO WORK
+
 		// if (stopAll && stopForCollision) {
 		if (stopAll) {
 			// UnityEngine.Debug.Log("IN STOP ALL"); //OSCAR
