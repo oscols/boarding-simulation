@@ -199,6 +199,9 @@ public class Main : MonoBehaviour {
 		//Solve linear constraint problem
 		Grid.instance.PsolveRenormPsolve ();
 	//	Debug.Log ("Psolve took: " + s.ElapsedMilliseconds + " ms");
+
+		Grid.instance.collisionHandling(ref agentList); // OSCAR
+
 		//Move agents
 		for (int i = 0; i < agentList.Count; ++i) {
 			if (agentList [i].done) {
@@ -211,7 +214,10 @@ public class Main : MonoBehaviour {
 		}
 	//	Debug.Log ("Agent update took: " + s.ElapsedMilliseconds + " ms");
 		//Pair-wise collision handling between agents
-		Grid.instance.collisionHandling(ref agentList);
+
+		// OSCAR COMMENTED OUT
+		// Grid.instance.collisionHandling(ref agentList);
+
 		//	Debug.Log ("Collision handling took: " + s.ElapsedMilliseconds + " ms");
 
 		//flags
