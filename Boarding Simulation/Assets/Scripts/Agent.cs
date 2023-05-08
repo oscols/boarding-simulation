@@ -74,14 +74,16 @@ public class Agent : MonoBehaviour {
 		// MAYBE MAKE AISLE WIDER BUT I WANT IT TO WORK
 
 		// if (stopAll && stopForCollision) {
-		if (stopAll) {
-			// UnityEngine.Debug.Log("IN STOP ALL"); //OSCAR
-			// velocity.x = 0.1f; // OSCAR
-			// velocity.z = 0.1f; // OSCAR
-			// rbody.isKinematic = true;
-			velocity.x = 0; // OSCAR
-			velocity.z = 0; // OSCAR
-		}
+		// if (stopAll && stopCount != 1) {
+		// 	// UnityEngine.Debug.Log("IN STOP ALL"); //OSCAR
+		// 	// velocity.x = 0.1f; // OSCAR
+		// 	// velocity.z = 0.1f; // OSCAR
+		// 	// rbody.isKinematic = true;
+		// 	rbody.isKinematic = true;
+		// 	velocity.x = 0; // OSCAR
+		// 	velocity.z = 0; // OSCAR
+		// }
+		// rbody.isKinematic = false;
 
 		// if (slowDown) {
 		// 	velocity.x = 0.4f; // OSCAR
@@ -92,7 +94,7 @@ public class Agent : MonoBehaviour {
 
 		if (stop) { // OSCAR
 			// previousVelocity = velocity; // OSCAR
-			stopAll = true;
+			// stopAll = true;
 			velocity.x = 0; // OSCAR
 			velocity.z = 0; // OSCAR
 			rbody.isKinematic = true;
@@ -101,17 +103,17 @@ public class Agent : MonoBehaviour {
 				// velocity.y = 0; // OSCAR
 				// velocity.z = 0; // OSCAR
 				
-				Delay(3000).ContinueWith(_ => setPreviousVelocity());
+				Delay(300).ContinueWith(_ => setPreviousVelocity());
 				stopCount++;
 			}
 
-			// Task.Delay(1000);
-			// velocity.x = 0; // OSCAR
-			// velocity.y = 0; // OSCAR
-			// velocity.z = 0; // OSCAR
-			// if (collision) {
-			// 	UnityEngine.Debug.Log("COLLISION"); //OSCAR
-			// }
+		// 	// Task.Delay(1000);
+		// 	// velocity.x = 0; // OSCAR
+		// 	// velocity.y = 0; // OSCAR
+		// 	// velocity.z = 0; // OSCAR
+		// 	// if (collision) {
+		// 	// 	UnityEngine.Debug.Log("COLLISION"); //OSCAR
+		// 	// }
 		}
 	}
 

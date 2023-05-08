@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using MathNet.Numerics.LinearAlgebra.Double;
 using MathNet.Numerics.LinearAlgebra;
 using MathNet.Numerics.Distributions;
+using System.Threading.Tasks;
+
 
 public class Grid : MonoBehaviour {
 
@@ -489,63 +491,32 @@ public class Grid : MonoBehaviour {
 			if (a == oa )
 				continue;
 
-			if (agentList[oa].stopAll && stopAll) {
+			if ((agentList[oa].stopAll || agentList[oa].stop) && stopAll) {
+				UnityEngine.Debug.Log("STOP"); //OSCAR
 				agentList[a].stopAll = true;
+			} else if (!stopAll) {
+				agentList[a].stopAll = false;
 			}
 		}
+	}
+
+	internal static Task Delay(double milliseconds) {
+		var tcs = new TaskCompletionSource<bool>();
+		System.Timers.Timer timer = new System.Timers.Timer();
+		timer.Elapsed+=(obj, args) =>
+		{
+			tcs.TrySetResult(true);
+		};
+		timer.Interval = milliseconds;
+		timer.AutoReset = false;
+		timer.Start();
+		return tcs.Task;
 	}
 
 		/**
 	 * Do pair-wise collision avoidance for a set of agents, with respect to surrounding columns and rows.
 	 **/ 
-	internal void collisionHandling(ref List<Agent> agentList) {
-		bool temp = false;
-		for (int i = 0; i < agentList.Count; ++i) {
-			if (agentList[i].stop) {
-				temp = true;
-				// slowDown = true;
-			}
-		}
-		if (temp) {
-			stopAll = true;
-		} else {
-			stopAll = false;
-		}
-
-		calculateNeighborList (ref agentList);
-		for (int i = 0; i < agentList.Count; ++i) {
-			int row = (int)((agentList [i].transform.position.z - Main.zMinMax.x) / lenOfBin); 
-			int column = (int)((agentList[i].transform.position.x - Main.xMinMax.x) / lenOfBin); 
-			if (row < 0)
-				row = 0; 
-			if (column < 0)
-				column = 0;
-			if (row > neighbourBins - 1) {
-				row = neighbourBins - 1;
-			}
-			if (column > neighbourBins - 1) {
-				column = neighbourBins - 1;
-			}
-			handleNewStop(i, row, column, ref agentList); //center
-			handleNewStop(i, row+1, column, ref agentList); //up
-			handleNewStop(i, row+1, column+1, ref agentList); //top right
-			handleNewStop(i, row, column+1, ref agentList); //right
-			handleNewStop(i, row-1, column+1, ref agentList); //bottom right
-			handleNewStop(i, row-1, column, ref agentList); //bottom
-			handleNewStop(i, row-1, column-1, ref agentList); //bottom left
-			handleNewStop(i, row, column-1, ref agentList); //left
-			handleNewStop(i, row-1, column-1, ref agentList); //top left
-		}
-	}
-
-
-	// /**
-	//  * Do pair-wise collision avoidance for a set of agents, with respect to surrounding columns and rows.
-	//  **/ 
 	// internal void collisionHandling(ref List<Agent> agentList) {
-	// //	check = new bool[agentList.Count, agentList.Count];
-
-	// 	// bool stopAll = false;
 	// 	bool temp = false;
 	// 	for (int i = 0; i < agentList.Count; ++i) {
 	// 		if (agentList[i].stop) {
@@ -556,23 +527,8 @@ public class Grid : MonoBehaviour {
 	// 	if (temp) {
 	// 		stopAll = true;
 	// 	} else {
-	// 		stopAll = false;
+	// 		Delay(1000).ContinueWith(_ => stopAll = false);
 	// 	}
-
-	// 	if (stopAll) {
-	// 		for (int i = 0; i < agentList.Count; ++i) {
-	// 			agentList[i].stopAll = true;
-	// 		}
-	// 	}
-
-	// 	if (!stopAll) {
-	// 		for (int i = 0; i < agentList.Count; ++i) {
-	// 			// slowDown = false;
-	// 			agentList[i].stopAll = false;
-	// 			// agentList[i].slowDown = false;
-	// 		}
-	// 	}
-
 
 	// 	calculateNeighborList (ref agentList);
 	// 	for (int i = 0; i < agentList.Count; ++i) {
@@ -588,30 +544,92 @@ public class Grid : MonoBehaviour {
 	// 		if (column > neighbourBins - 1) {
 	// 			column = neighbourBins - 1;
 	// 		}
-	// 		if (agentList[i].stopAll) { // OSCAR
-	// 		// if (false) { // OSCAR
-	// 			handleStop(i, row, column, ref agentList); //center
-	// 			handleStop(i, row+1, column, ref agentList); //up
-	// 			handleStop(i, row+1, column+1, ref agentList); //top right
-	// 			handleStop(i, row, column+1, ref agentList); //right
-	// 			handleStop(i, row-1, column+1, ref agentList); //bottom right
-	// 			handleStop(i, row-1, column, ref agentList); //bottom
-	// 			handleStop(i, row-1, column-1, ref agentList); //bottom left
-	// 			handleStop(i, row, column-1, ref agentList); //left
-	// 			handleStop(i, row-1, column-1, ref agentList); //top left
-	// 		} else {
-	// 			handleCollision (i, row, column, ref agentList); //center
-	// 			handleCollision (i, row+1, column, ref agentList); //up
-	// 			handleCollision (i, row+1, column+1, ref agentList); //top right
-	// 			handleCollision (i, row, column+1, ref agentList); //right
-	// 			handleCollision (i, row-1, column+1, ref agentList); //bottom right
-	// 			handleCollision (i, row-1, column, ref agentList); //bottom
-	// 			handleCollision (i, row-1, column-1, ref agentList); //bottom left
-	// 			handleCollision (i, row, column-1, ref agentList); //left
-	// 			handleCollision (i, row-1, column-1, ref agentList); //top left
-	// 		}
+	// 		handleNewStop(i, row, column, ref agentList); //center
+	// 		handleNewStop(i, row+1, column, ref agentList); //up
+	// 		handleNewStop(i, row+1, column+1, ref agentList); //top right
+	// 		handleNewStop(i, row, column+1, ref agentList); //right
+	// 		handleNewStop(i, row-1, column+1, ref agentList); //bottom right
+	// 		handleNewStop(i, row-1, column, ref agentList); //bottom
+	// 		handleNewStop(i, row-1, column-1, ref agentList); //bottom left
+	// 		handleNewStop(i, row, column-1, ref agentList); //left
+	// 		handleNewStop(i, row-1, column-1, ref agentList); //top left
 	// 	}
 	// }
+
+
+	/**
+	 * Do pair-wise collision avoidance for a set of agents, with respect to surrounding columns and rows.
+	 **/ 
+	internal void collisionHandling(ref List<Agent> agentList) {
+	//	check = new bool[agentList.Count, agentList.Count];
+
+		// bool stopAll = false;
+		bool temp = false;
+		for (int i = 0; i < agentList.Count; ++i) {
+			if (agentList[i].stop) {
+				temp = true;
+				// slowDown = true;
+			}
+		}
+		if (temp) {
+			stopAll = true;
+		} else {
+			stopAll = false;
+		}
+
+		if (stopAll) {
+			for (int i = 0; i < agentList.Count; ++i) {
+				agentList[i].stopAll = true;
+			}
+		}
+
+		if (!stopAll) {
+			for (int i = 0; i < agentList.Count; ++i) {
+				// slowDown = false;
+				agentList[i].stopAll = false;
+				// agentList[i].slowDown = false;
+			}
+		}
+
+
+		calculateNeighborList (ref agentList);
+		for (int i = 0; i < agentList.Count; ++i) {
+			int row = (int)((agentList [i].transform.position.z - Main.zMinMax.x) / lenOfBin); 
+			int column = (int)((agentList[i].transform.position.x - Main.xMinMax.x) / lenOfBin); 
+			if (row < 0)
+				row = 0; 
+			if (column < 0)
+				column = 0;
+			if (row > neighbourBins - 1) {
+				row = neighbourBins - 1;
+			}
+			if (column > neighbourBins - 1) {
+				column = neighbourBins - 1;
+			}
+			// if (agentList[i].stopAll) { // OSCAR
+			// // if (false) { // OSCAR
+			// 	handleStop(i, row, column, ref agentList); //center
+			// 	handleStop(i, row+1, column, ref agentList); //up
+			// 	handleStop(i, row+1, column+1, ref agentList); //top right
+			// 	handleStop(i, row, column+1, ref agentList); //right
+			// 	handleStop(i, row-1, column+1, ref agentList); //bottom right
+			// 	handleStop(i, row-1, column, ref agentList); //bottom
+			// 	handleStop(i, row-1, column-1, ref agentList); //bottom left
+			// 	handleStop(i, row, column-1, ref agentList); //left
+			// 	handleStop(i, row-1, column-1, ref agentList); //top left
+			// } else {
+				handleCollision (i, row, column, ref agentList); //center
+				handleCollision (i, row+1, column, ref agentList); //up
+				handleCollision (i, row+1, column+1, ref agentList); //top right
+				handleCollision (i, row, column+1, ref agentList); //right
+				handleCollision (i, row-1, column+1, ref agentList); //bottom right
+				handleCollision (i, row-1, column, ref agentList); //bottom
+				handleCollision (i, row-1, column-1, ref agentList); //bottom left
+				handleCollision (i, row, column-1, ref agentList); //left
+				handleCollision (i, row-1, column-1, ref agentList); //top left
+			// }
+		}
+	}
 
 	/**
 	 * For each agent, calculate its position in a neighborhood bin.
