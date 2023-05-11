@@ -18,7 +18,10 @@ public class Agent : MonoBehaviour {
 	internal bool stopAll = false; // OSCAR
 	internal bool stopForCollision = false; // OSCAR
 	internal bool slowDown = false; // OSCAR
+	internal bool stowLuggage = false; // OSCAR
 	internal int stopCount = 0; // OSCAR
+	internal int agentNumber = 100; // Implementera denna
+	internal int haveLuggage = 100; // Implementera denna
 	internal Vector3 previousVelocity; // OSCAR
 	internal bool done = false;
 	internal bool noMap = false;
@@ -74,37 +77,51 @@ public class Agent : MonoBehaviour {
 		// MAYBE MAKE AISLE WIDER BUT I WANT IT TO WORK
 
 		// if (stopAll && stopForCollision) {
-		// if (stopAll && stopCount != 1) {
-		// 	// UnityEngine.Debug.Log("IN STOP ALL"); //OSCAR
-		// 	// velocity.x = 0.1f; // OSCAR
-		// 	// velocity.z = 0.1f; // OSCAR
-		// 	// rbody.isKinematic = true;
-		// 	rbody.isKinematic = true;
-		// 	velocity.x = 0; // OSCAR
-		// 	velocity.z = 0; // OSCAR
-		// }
+
+		if (stopAll && stopCount != 1) {
+			// UnityEngine.Debug.Log("IN STOP ALL"); //OSCAR
+			// rbody.isKinematic = true;
+			velocity.x = 0; // OSCAR
+			velocity.z = 0; // OSCAR
+		}
 		// rbody.isKinematic = false;
 
 		// if (slowDown) {
 		// 	velocity.x = 0.4f; // OSCAR
 		// 	velocity.z = 0.4f; // OSCAR
 		// }
+		if (velocity.x == 0 ) {
+			UnityEngine.Debug.Log("ZERO"); //OSCAR
+			stopAll = true;
+		}
 
-		// Maybe if within radius, just stop?
+		if (stowLuggage) {
+			rbody.isKinematic = true;
+			velocity.x = 0; // OSCAR
+			velocity.z = 0; // OSCAR
+		}
 
 		if (stop) { // OSCAR
 			// previousVelocity = velocity; // OSCAR
 			// stopAll = true;
-			velocity.x = 0; // OSCAR
-			velocity.z = 0; // OSCAR
-			rbody.isKinematic = true;
+
 			if (stopCount == 0) {
+				stowLuggage = true;
 				// velocity.x = 0; // OSCAR
 				// velocity.y = 0; // OSCAR
 				// velocity.z = 0; // OSCAR
+
+				velocity.x = 0; // OSCAR
+				// float previousVelocityZ = velocity.z;
+				velocity.z = 0; // OSCAR
+				rbody.isKinematic = true;
 				
-				Delay(300).ContinueWith(_ => setPreviousVelocity());
+				// Delay(3000).ContinueWith(_ => setPreviousVelocity());
+				Delay(3000).ContinueWith(_ => stowLuggage = false);
+				Delay(5000).ContinueWith(_ => stop = false);
 				stopCount++;
+			} else {
+
 			}
 
 		// 	// Task.Delay(1000);
@@ -231,35 +248,42 @@ public class Agent : MonoBehaviour {
 		} 
 		calculatePreferredVelocity(ref map);
 
-		setCorrectedVelocity ();
-		prevPos = transform.position;
+		// if(stopAll) {
+		// 	animator.speed = 0;
+		// } else {
+			setCorrectedVelocity ();
+			prevPos = transform.position;
 
-		Vector3 nextPos = transform.position + velocity * Grid.instance.dt; nextPos.y = 3.0f;
+			Vector3 nextPos = transform.position + velocity * Grid.instance.dt; nextPos.y = 3.0f;
 
-		transform.position += velocity * Grid.instance.dt;
-
-
-		if(rbody != null)
-			rbody.velocity = Vector3.zero;
+			transform.position += velocity * Grid.instance.dt;
 
 
-		collisionAvoidanceVelocity = Vector3.zero;
+			if(rbody != null)
+				rbody.velocity = Vector3.zero;
 
-		float realSpeed = Vector3.Distance (transform.position, prevPos) / Mathf.Max(Grid.instance.dt, Time.deltaTime);
-		if (animator != null) {
-	
-			if (realSpeed < 0.05f) {
-				animator.speed = 0;
-			} else {
-				animator.speed = (realSpeed) / Grid.instance.agentMaxSpeed;
+
+			collisionAvoidanceVelocity = Vector3.zero;
+
+			float realSpeed = Vector3.Distance (transform.position, prevPos) / Mathf.Max(Grid.instance.dt, Time.deltaTime);
+			if (animator != null) {
+		
+				if (realSpeed < 0.05f) {
+					animator.speed = 0;
+				} else {
+					animator.speed = (realSpeed) / Grid.instance.agentMaxSpeed;
+				}
 			}
-		}
+		// }
+
 	}
 
 	internal void OnCollisionEnter(Collision c) {
 		collision = true;
 		// stopForCollision = true;
-		if (stop) {
+		if (stopForCollision) {
+			stopAll = true;
+			// UnityEngine.Debug.Log("COLLISION"); //OSCAR
 			// stopAll = true;
 			// System.Threading.Thread.Sleep(4000);
 			// stop = false;

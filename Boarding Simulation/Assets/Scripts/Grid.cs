@@ -482,6 +482,7 @@ public class Grid : MonoBehaviour {
 		}
 	}
 
+
 	// If some oa has stop -> stop a
 	internal void handleNewStop(int a, int row, int col, ref List<Agent> agentList) {
 		if (row < 0 || col < 0 || row >= neighbourBins || col >= neighbourBins)
@@ -492,7 +493,7 @@ public class Grid : MonoBehaviour {
 				continue;
 
 			if ((agentList[oa].stopAll || agentList[oa].stop) && stopAll) {
-				UnityEngine.Debug.Log("STOP"); //OSCAR
+				// UnityEngine.Debug.Log("STOP"); //OSCAR
 				agentList[a].stopAll = true;
 			} else if (!stopAll) {
 				agentList[a].stopAll = false;
@@ -565,7 +566,14 @@ public class Grid : MonoBehaviour {
 
 		// bool stopAll = false;
 		bool temp = false;
+
+		// Experiment
+		// Would maybe work if we know what order they are in 
+		int numOfStopped = 0;
 		for (int i = 0; i < agentList.Count; ++i) {
+			if (agentList[i].stopAll) {
+				numOfStopped++;
+			}
 			if (agentList[i].stop) {
 				temp = true;
 				// slowDown = true;
@@ -575,11 +583,15 @@ public class Grid : MonoBehaviour {
 			stopAll = true;
 		} else {
 			stopAll = false;
+			// Delay(5000).ContinueWith(_ => stopAll = false); DONT WORK
 		}
 
 		if (stopAll) {
 			for (int i = 0; i < agentList.Count; ++i) {
-				agentList[i].stopAll = true;
+				agentList[i].stopForCollision = true;
+				if (numOfStopped > 5) {
+					agentList[i].stopAll = true;
+				}
 			}
 		}
 
@@ -587,6 +599,7 @@ public class Grid : MonoBehaviour {
 			for (int i = 0; i < agentList.Count; ++i) {
 				// slowDown = false;
 				agentList[i].stopAll = false;
+				agentList[i].stopForCollision = false;
 				// agentList[i].slowDown = false;
 			}
 		}
@@ -606,8 +619,8 @@ public class Grid : MonoBehaviour {
 			if (column > neighbourBins - 1) {
 				column = neighbourBins - 1;
 			}
-			// if (agentList[i].stopAll) { // OSCAR
-			// // if (false) { // OSCAR
+			// if (agentList[i].stopAll) { // OSCAR SOOOON
+			// if (agentList[i].stop || agentList[i].stopAll) { // OSCAR
 			// 	handleStop(i, row, column, ref agentList); //center
 			// 	handleStop(i, row+1, column, ref agentList); //up
 			// 	handleStop(i, row+1, column+1, ref agentList); //top right
@@ -617,7 +630,17 @@ public class Grid : MonoBehaviour {
 			// 	handleStop(i, row-1, column-1, ref agentList); //bottom left
 			// 	handleStop(i, row, column-1, ref agentList); //left
 			// 	handleStop(i, row-1, column-1, ref agentList); //top left
-			// } else {
+			if (stopAll) {
+				handleNewStop(i, row, column, ref agentList); //center
+				handleNewStop(i, row+1, column, ref agentList); //up
+				handleNewStop(i, row+1, column+1, ref agentList); //top right
+				handleNewStop(i, row, column+1, ref agentList); //right
+				handleNewStop(i, row-1, column+1, ref agentList); //bottom right
+				handleNewStop(i, row-1, column, ref agentList); //bottom
+				handleNewStop(i, row-1, column-1, ref agentList); //bottom left
+				handleNewStop(i, row, column-1, ref agentList); //left
+				handleNewStop(i, row-1, column-1, ref agentList); //top left
+			} else {
 				handleCollision (i, row, column, ref agentList); //center
 				handleCollision (i, row+1, column, ref agentList); //up
 				handleCollision (i, row+1, column+1, ref agentList); //top right
@@ -627,7 +650,7 @@ public class Grid : MonoBehaviour {
 				handleCollision (i, row-1, column-1, ref agentList); //bottom left
 				handleCollision (i, row, column-1, ref agentList); //left
 				handleCollision (i, row-1, column-1, ref agentList); //top left
-			// }
+			}
 		}
 	}
 
