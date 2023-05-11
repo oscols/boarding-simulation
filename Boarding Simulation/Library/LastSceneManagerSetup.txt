@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/StandardBoarding.unity
+- path: Assets/Scenes/SteffenNoLuggage.unity
   isLoaded: 1
   isActive: 1
