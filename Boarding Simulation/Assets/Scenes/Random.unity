@@ -164,7 +164,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 478446242}
+      objectReference: {fileID: 790813226}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -281,7 +281,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 790813226}
+      objectReference: {fileID: 1837251973}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -398,7 +398,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1008879503}
+      objectReference: {fileID: 681290455}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -515,7 +515,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 549171452}
+      objectReference: {fileID: 1261370904}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -632,7 +632,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1302860141}
+      objectReference: {fileID: 549171452}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -807,7 +807,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 341223164}
+      objectReference: {fileID: 1174383132}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -992,7 +992,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 308126402}
+      objectReference: {fileID: 775710848}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -1355,7 +1355,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1071133347}
+      objectReference: {fileID: 1213756675}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -2000,7 +2000,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 962237637}
+      objectReference: {fileID: 142650500}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -2186,7 +2186,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 213121232}
+      objectReference: {fileID: 1629190937}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -2313,7 +2313,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1213756675}
+      objectReference: {fileID: 820101783}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -2785,7 +2785,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1001501651}
+      objectReference: {fileID: 1164348475}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -2966,7 +2966,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 437998160}
+      objectReference: {fileID: 1484587459}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -3167,7 +3167,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 186176287}
+      objectReference: {fileID: 2085485924}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -3364,7 +3364,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 196694950}
+      objectReference: {fileID: 757475667}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -3549,7 +3549,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1580347690}
+      objectReference: {fileID: 560236346}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -3889,7 +3889,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1837251973}
+      objectReference: {fileID: 1879246061}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -4359,7 +4359,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1174383132}
+      objectReference: {fileID: 1778378485}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -4487,7 +4487,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1276723465}
+      objectReference: {fileID: 1071133347}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -4827,7 +4827,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 487876211}
+      objectReference: {fileID: 568858756}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -4944,7 +4944,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1261370904}
+      objectReference: {fileID: 213121232}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -5562,7 +5562,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1201234436}
+      objectReference: {fileID: 341223164}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -5852,7 +5852,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1474115266}
+      objectReference: {fileID: 1276027388}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -6092,7 +6092,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1911743968}
+      objectReference: {fileID: 1026686118}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -6801,7 +6801,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1026686118}
+      objectReference: {fileID: 111951737}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -6918,7 +6918,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1860849502}
+      objectReference: {fileID: 1963004915}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -7619,7 +7619,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 73018573}
+      objectReference: {fileID: 340070997}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -8108,7 +8108,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 837827195}
+      objectReference: {fileID: 417310622}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -8378,7 +8378,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 2018221313}
+      objectReference: {fileID: 1283550419}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -8495,7 +8495,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 245035071}
+      objectReference: {fileID: 294263565}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -8812,7 +8812,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 560236346}
+      objectReference: {fileID: 523055383}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -9204,7 +9204,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1879246061}
+      objectReference: {fileID: 962237637}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -9443,7 +9443,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 2110199785}
+      objectReference: {fileID: 1588966393}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -9734,7 +9734,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1134141524}
+      objectReference: {fileID: 1013877400}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -9851,7 +9851,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1162682031}
+      objectReference: {fileID: 722304995}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -9968,7 +9968,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1452451060}
+      objectReference: {fileID: 437998160}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -10096,7 +10096,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 681290455}
+      objectReference: {fileID: 837827195}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -10302,7 +10302,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 757475667}
+      objectReference: {fileID: 1134141524}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -10742,7 +10742,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1963004915}
+      objectReference: {fileID: 1911743968}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -10970,7 +10970,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1533886352}
+      objectReference: {fileID: 590585440}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -11087,7 +11087,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 417310622}
+      objectReference: {fileID: 308126402}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -11262,7 +11262,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 590585440}
+      objectReference: {fileID: 196694950}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -11437,7 +11437,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 31099257}
+      objectReference: {fileID: 755954748}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -11554,7 +11554,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1588966393}
+      objectReference: {fileID: 1276723465}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -11817,7 +11817,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1778378485}
+      objectReference: {fileID: 1826571781}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -12122,7 +12122,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 111951737}
+      objectReference: {fileID: 1630349434}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -12308,7 +12308,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 568858756}
+      objectReference: {fileID: 1128823276}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -12916,7 +12916,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1819424418}
+      objectReference: {fileID: 1162682031}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -13170,7 +13170,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 755954748}
+      objectReference: {fileID: 1008879503}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -13719,7 +13719,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1629190937}
+      objectReference: {fileID: 73018573}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -14120,7 +14120,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 722304995}
+      objectReference: {fileID: 1819424418}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -14237,7 +14237,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 523055383}
+      objectReference: {fileID: 2110199785}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -14907,7 +14907,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1013877400}
+      objectReference: {fileID: 520448995}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -15099,7 +15099,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1484587459}
+      objectReference: {fileID: 1201234436}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -15279,7 +15279,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1276027388}
+      objectReference: {fileID: 1474115266}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -15543,7 +15543,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1128823276}
+      objectReference: {fileID: 487876211}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -16025,7 +16025,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1283550419}
+      objectReference: {fileID: 397742757}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -16431,7 +16431,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 2068846732}
+      objectReference: {fileID: 2059295797}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -16606,7 +16606,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 294263565}
+      objectReference: {fileID: 31099257}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -16723,7 +16723,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 403202120}
+      objectReference: {fileID: 1001501651}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -16840,7 +16840,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 2059295797}
+      objectReference: {fileID: 1533886352}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -16957,7 +16957,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 520448995}
+      objectReference: {fileID: 403202120}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -17074,7 +17074,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 142650500}
+      objectReference: {fileID: 1452451060}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -17227,7 +17227,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 2085485924}
+      objectReference: {fileID: 1580347690}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -17486,7 +17486,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 820101783}
+      objectReference: {fileID: 186176287}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -17603,7 +17603,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1826571781}
+      objectReference: {fileID: 2068846732}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -18101,7 +18101,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1164348475}
+      objectReference: {fileID: 2018221313}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -19692,7 +19692,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 775710848}
+      objectReference: {fileID: 478446242}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -19815,7 +19815,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1630349434}
+      objectReference: {fileID: 1302860141}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -19932,7 +19932,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 340070997}
+      objectReference: {fileID: 303047971}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -20229,7 +20229,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 397742757}
+      objectReference: {fileID: 245035071}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -20406,7 +20406,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 303047971}
+      objectReference: {fileID: 1860849502}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
