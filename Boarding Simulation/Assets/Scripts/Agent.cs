@@ -93,6 +93,7 @@ public class Agent : MonoBehaviour {
 			// rbody.isKinematic = true;
 			velocity.x = 0; // OSCAR
 			velocity.z = 0; // OSCAR
+			Delay(5000).ContinueWith(_ => stopAll = false);
 		}
 		// rbody.isKinematic = false;
 

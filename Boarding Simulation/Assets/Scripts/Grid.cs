@@ -594,7 +594,9 @@ public class Grid : MonoBehaviour {
 			for (int i = 0; i < agentList.Count; ++i) {
 				agentList[i].stopForCollision = true;
 				agentList[i].stopNumber = stopNumber;
-				if (numOfStopped > 70) {
+				// 2 For Back-to-front
+				// 72 For Steffen
+				if (numOfStopped > 72) {
 					agentList[i].stopAll = true;
 				}
 			}
@@ -624,7 +626,7 @@ public class Grid : MonoBehaviour {
 			if (column > neighbourBins - 1) {
 				column = neighbourBins - 1;
 			}
-			// if (agentList[i].stopAll) { // OSCAR SOOOON
+			// if (agentList[i].stopAll) { // OSCAR
 			// if (agentList[i].stop || agentList[i].stopAll) { // OSCAR
 			// 	handleStop(i, row, column, ref agentList); //center
 			// 	handleStop(i, row+1, column, ref agentList); //up

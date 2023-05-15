@@ -75,7 +75,7 @@ public class Main : MonoBehaviour {
 	public bool smoothTurns = false;
 	public bool handleCollision = false;
 
-	internal int agentCounter = 1;
+	internal int agentCounter = 1; // OSCAR
 
 	/**
 	 * Initialize simulation by taking the user's options into consideration and spawn agents.
@@ -215,6 +215,9 @@ public class Main : MonoBehaviour {
 			agentList [i].move(ref roadmap);
 
 			if (agentList[i].agentNumber == agentCounter) {
+				if (agentCounter == 1) {
+					UnityEngine.Debug.Log("TIMER ON"); //OSCAR
+				}
 				agentCounter++;
 			}
 
@@ -222,6 +225,9 @@ public class Main : MonoBehaviour {
 				agentList[i].agentCounter = agentCounter;
 			}
 
+		}
+		if (agentList.Count == 0) {
+			UnityEngine.Debug.Log("TIMER OFF"); //OSCAR
 		}
 	//	Debug.Log ("Agent update took: " + s.ElapsedMilliseconds + " ms");
 		//Pair-wise collision handling between agents
