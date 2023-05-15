@@ -24,6 +24,7 @@ public class Grid : MonoBehaviour {
 	internal bool usePresetGroupDistances;
 	internal bool slowDown; // OSCAR 
 	internal bool stopAll; // OSCAR 
+	internal int stopNumber; // OSCAR
 	internal int cellsPerRow;
 	internal Main.LCPSolutioner solver;
 	internal LCPSolver mprgpSolver; //LCP solver instance
@@ -575,6 +576,9 @@ public class Grid : MonoBehaviour {
 				numOfStopped++;
 			}
 			if (agentList[i].stop) {
+				if (stopNumber < agentList[i].agentNumber) {
+					stopNumber = agentList[i].agentNumber;
+				}
 				temp = true;
 				// slowDown = true;
 			}
@@ -589,6 +593,7 @@ public class Grid : MonoBehaviour {
 		if (stopAll) {
 			for (int i = 0; i < agentList.Count; ++i) {
 				agentList[i].stopForCollision = true;
+				agentList[i].stopNumber = stopNumber;
 				if (numOfStopped > 5) {
 					agentList[i].stopAll = true;
 				}

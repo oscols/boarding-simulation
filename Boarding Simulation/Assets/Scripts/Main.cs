@@ -75,6 +75,8 @@ public class Main : MonoBehaviour {
 	public bool smoothTurns = false;
 	public bool handleCollision = false;
 
+	internal int agentCounter = 1;
+
 	/**
 	 * Initialize simulation by taking the user's options into consideration and spawn agents.
 	 * Then create the Staggered Grid along with all cells and velocity nodes.
@@ -211,6 +213,15 @@ public class Main : MonoBehaviour {
 				continue;
 			}
 			agentList [i].move(ref roadmap);
+
+			if (agentList[i].agentNumber == agentCounter) {
+				agentCounter++;
+			}
+
+			if (agentList[i].agentCounter != agentCounter) {
+				agentList[i].agentCounter = agentCounter;
+			}
+
 		}
 	//	Debug.Log ("Agent update took: " + s.ElapsedMilliseconds + " ms");
 		//Pair-wise collision handling between agents

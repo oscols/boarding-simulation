@@ -21,6 +21,8 @@ public class Agent : MonoBehaviour {
 	internal bool stowLuggage = false; // OSCAR
 	internal int stopCount = 0; // OSCAR
 	internal int agentNumber = 100; // Implementera denna
+	internal int agentCounter = 1; // OSCAR
+	internal int stopNumber;
 	internal int haveLuggage = 100; // Implementera denna
 	internal Vector3 previousVelocity; // OSCAR
 	internal bool done = false;
@@ -41,6 +43,14 @@ public class Agent : MonoBehaviour {
 		calculateRowAndColumn();
 		if (!Grid.instance.colHandler && rbody != null) {
 			Destroy (rbody);
+		}
+	}
+
+	// OSCAR
+	void OnTriggerEnter(Collider other) {
+		if(other.gameObject.name == "Counter") {
+			agentNumber = agentCounter;
+			UnityEngine.Debug.Log("I get number: " + agentNumber + " :)"); //OSCAR
 		}
 	}
 
@@ -78,7 +88,7 @@ public class Agent : MonoBehaviour {
 
 		// if (stopAll && stopForCollision) {
 
-		if (stopAll && stopCount != 1) {
+		if (stopAll && stopCount != 1 && agentNumber > stopNumber) {
 			// UnityEngine.Debug.Log("IN STOP ALL"); //OSCAR
 			// rbody.isKinematic = true;
 			velocity.x = 0; // OSCAR
@@ -91,7 +101,7 @@ public class Agent : MonoBehaviour {
 		// 	velocity.z = 0.4f; // OSCAR
 		// }
 		if (velocity.x == 0 ) {
-			UnityEngine.Debug.Log("ZERO"); //OSCAR
+			// UnityEngine.Debug.Log("ZERO"); //OSCAR
 			stopAll = true;
 		}
 
