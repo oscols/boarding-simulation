@@ -390,6 +390,13 @@ public class Grid : MonoBehaviour {
 		// 	}
 		// }
 
+		// OSCAR
+		// if (neighMatrix[row][col].Count == 0) {
+		// 	agentList[a].noNeighbor = true;
+		// } else {
+		// 	agentList[a].noNeighbor = false;
+		// }
+
 		if (row < 0 || col < 0 || row >= neighbourBins || col >= neighbourBins)
 			return;
 		for(int i = 0; i < neighMatrix[row][col].Count; ++i) {

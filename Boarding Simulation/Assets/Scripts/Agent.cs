@@ -19,6 +19,7 @@ public class Agent : MonoBehaviour {
 	internal bool stopForCollision = false; // OSCAR
 	internal bool slowDown = false; // OSCAR
 	internal int stopCount = 0; // OSCAR
+	internal bool noNeighbor = false; // OSCAR
 	internal Vector3 previousVelocity; // OSCAR
 	internal bool done = false;
 	internal bool noMap = false;
@@ -93,6 +94,7 @@ public class Agent : MonoBehaviour {
 		// Maybe if within radius, just stop?
 
 		if (stop) { // OSCAR
+
 			// previousVelocity = velocity; // OSCAR
 			// stopAll = true;
 			velocity.x = 0; // OSCAR
@@ -102,7 +104,11 @@ public class Agent : MonoBehaviour {
 				// velocity.x = 0; // OSCAR
 				// velocity.y = 0; // OSCAR
 				// velocity.z = 0; // OSCAR
-				
+				// if (noNeighbor) {
+				// 	Delay(3000).ContinueWith(_ => setPreviousVelocity());
+				// } else {
+				// 	Delay(300).ContinueWith(_ => setPreviousVelocity());
+				// }
 				Delay(300).ContinueWith(_ => setPreviousVelocity());
 				stopCount++;
 			}
