@@ -594,7 +594,7 @@ public class Grid : MonoBehaviour {
 			for (int i = 0; i < agentList.Count; ++i) {
 				agentList[i].stopForCollision = true;
 				agentList[i].stopNumber = stopNumber;
-				if (numOfStopped > 5) {
+				if (numOfStopped > 70) {
 					agentList[i].stopAll = true;
 				}
 			}
