@@ -20,7 +20,7 @@ public class Agent : MonoBehaviour {
 	internal bool slowDown = false; // OSCAR
 	internal bool stowLuggage = false; // OSCAR
 	internal int stopCount = 0; // OSCAR
-	internal int agentNumber = 100; // Implementera denna
+	internal int agentNumber = 1000; // OSCAR
 	internal int agentCounter = 1; // OSCAR
 	internal int stopNumber;
 	internal int haveLuggage = 100; // Implementera denna
@@ -126,10 +126,14 @@ public class Agent : MonoBehaviour {
 				// float previousVelocityZ = velocity.z;
 				velocity.z = 0; // OSCAR
 				rbody.isKinematic = true;
+
+				System.Random rand = new System.Random();
+				int luggageTime = rand.Next(2000, 6000);
+				UnityEngine.Debug.Log("RANDOM: " + luggageTime); //OSCAR
 				
 				// Delay(3000).ContinueWith(_ => setPreviousVelocity());
-				Delay(3000).ContinueWith(_ => stowLuggage = false);
-				Delay(5000).ContinueWith(_ => stop = false);
+				Delay(luggageTime).ContinueWith(_ => stowLuggage = false);
+				Delay(luggageTime + 1500).ContinueWith(_ => stop = false);
 				stopCount++;
 			} else {
 

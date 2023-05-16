@@ -596,7 +596,7 @@ public class Grid : MonoBehaviour {
 				agentList[i].stopNumber = stopNumber;
 				// 2 For Back-to-front
 				// 72 For Steffen
-				if (numOfStopped > 72) {
+				if (numOfStopped > 2) {
 					agentList[i].stopAll = true;
 				}
 			}

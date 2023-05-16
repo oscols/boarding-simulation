@@ -76,6 +76,8 @@ public class Main : MonoBehaviour {
 	public bool handleCollision = false;
 
 	internal int agentCounter = 1; // OSCAR
+	System.Diagnostics.Stopwatch s = new System.Diagnostics.Stopwatch();  // OSCAR
+	internal bool timer = true;
 
 	/**
 	 * Initialize simulation by taking the user's options into consideration and spawn agents.
@@ -193,7 +195,7 @@ public class Main : MonoBehaviour {
 		Grid.instance.solverMaxIterations = solverMaxIterations;
 
 		// Update grid with new density and velocity values
-	//	System.Diagnostics.Stopwatch s = new System.Diagnostics.Stopwatch();
+		// System.Diagnostics.Stopwatch s = new System.Diagnostics.Stopwatch();
 	//	s.Start ();
 		Grid.instance.updateCellDensity ();
 		Grid.instance.updateVelocityNodes ();
@@ -217,6 +219,7 @@ public class Main : MonoBehaviour {
 			if (agentList[i].agentNumber == agentCounter) {
 				if (agentCounter == 1) {
 					UnityEngine.Debug.Log("TIMER ON"); //OSCAR
+					s.Start ();
 				}
 				agentCounter++;
 			}
@@ -226,9 +229,14 @@ public class Main : MonoBehaviour {
 			}
 
 		}
-		if (agentList.Count == 0) {
+		if (agentList.Count == 0 && timer) {
 			UnityEngine.Debug.Log("TIMER OFF"); //OSCAR
+			s.Stop();
+			float time = s.ElapsedMilliseconds/1000;
+			UnityEngine.Debug.Log("Result in seconds: " + time); //OSCAR
+			timer = false;
 		}
+
 	//	Debug.Log ("Agent update took: " + s.ElapsedMilliseconds + " ms");
 		//Pair-wise collision handling between agents
 
