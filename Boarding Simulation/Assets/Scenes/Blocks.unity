@@ -164,7 +164,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 478446242}
+      objectReference: {fileID: 790813226}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -281,7 +281,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 790813226}
+      objectReference: {fileID: 1963004915}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -515,7 +515,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 73018573}
+      objectReference: {fileID: 1276027388}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -632,7 +632,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1302860141}
+      objectReference: {fileID: 437998160}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -807,7 +807,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 341223164}
+      objectReference: {fileID: 722304995}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -992,7 +992,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1826571781}
+      objectReference: {fileID: 1201234436}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -1199,7 +1199,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 67579755}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1349,7 +1349,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1071133347}
+      objectReference: {fileID: 1588966393}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -1510,7 +1510,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 85875395}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1875,6 +1875,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e88375e87842b144aa2dda2a80b3b4f3, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &121843899 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000013189226664, guid: e88375e87842b144aa2dda2a80b3b4f3,
+    type: 2}
+  m_PrefabInternal: {fileID: 121843898}
+  m_Script: {fileID: 11500000, guid: 4f31b45de3c115e4291f6c1b1036729b, type: 3}
 --- !u!1001 &125899139
 Prefab:
   m_ObjectHideFlags: 0
@@ -1933,6 +1939,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e88375e87842b144aa2dda2a80b3b4f3, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &125899140 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000013189226664, guid: e88375e87842b144aa2dda2a80b3b4f3,
+    type: 2}
+  m_PrefabInternal: {fileID: 125899139}
+  m_Script: {fileID: 11500000, guid: 4f31b45de3c115e4291f6c1b1036729b, type: 3}
 --- !u!4 &131729365 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000014275702142, guid: e88375e87842b144aa2dda2a80b3b4f3,
@@ -1994,7 +2006,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 962237637}
+      objectReference: {fileID: 1826571781}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -2174,7 +2186,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 213121232}
+      objectReference: {fileID: 2110199785}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -2301,7 +2313,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1213756675}
+      objectReference: {fileID: 2068846732}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -2416,7 +2428,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 215335496}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2767,7 +2779,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 487876211}
+      objectReference: {fileID: 990309177}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -2936,7 +2948,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 437998160}
+      objectReference: {fileID: 73018573}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -3137,7 +3149,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1778378485}
+      objectReference: {fileID: 1660256907}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -3328,7 +3340,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 196694950}
+      objectReference: {fileID: 341223164}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -3513,7 +3525,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1580347690}
+      objectReference: {fileID: 1261370904}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -3802,6 +3814,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e88375e87842b144aa2dda2a80b3b4f3, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &410792027 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000013189226664, guid: e88375e87842b144aa2dda2a80b3b4f3,
+    type: 2}
+  m_PrefabInternal: {fileID: 410792026}
+  m_Script: {fileID: 11500000, guid: 4f31b45de3c115e4291f6c1b1036729b, type: 3}
 --- !u!1001 &412429692
 Prefab:
   m_ObjectHideFlags: 0
@@ -3853,7 +3871,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1837251973}
+      objectReference: {fileID: 1174383132}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -4087,7 +4105,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 437646595}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -4266,6 +4284,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e88375e87842b144aa2dda2a80b3b4f3, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &468881519 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000013189226664, guid: e88375e87842b144aa2dda2a80b3b4f3,
+    type: 2}
+  m_PrefabInternal: {fileID: 468881518}
+  m_Script: {fileID: 11500000, guid: 4f31b45de3c115e4291f6c1b1036729b, type: 3}
 --- !u!114 &478446242 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114000013189226664, guid: e88375e87842b144aa2dda2a80b3b4f3,
@@ -4323,7 +4347,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1174383132}
+      objectReference: {fileID: 1580347690}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -4451,7 +4475,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1276723465}
+      objectReference: {fileID: 523055383}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -4785,7 +4809,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 487876211}
+      objectReference: {fileID: 1164348475}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -4902,7 +4926,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1261370904}
+      objectReference: {fileID: 294263565}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -5089,7 +5113,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 542377276}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -5514,7 +5538,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 403202120}
+      objectReference: {fileID: 1013877400}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -5617,7 +5641,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 632125942}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -5701,7 +5725,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 636647318}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -5804,7 +5828,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1164348475}
+      objectReference: {fileID: 468881519}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -6825,7 +6849,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 820101783}
+      objectReference: {fileID: 973223861}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -6942,7 +6966,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1860849502}
+      objectReference: {fileID: 1630349434}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -7167,7 +7191,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 793122996}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -7637,7 +7661,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 73018573}
+      objectReference: {fileID: 1837251973}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -7761,6 +7785,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e88375e87842b144aa2dda2a80b3b4f3, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &872298541 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000013189226664, guid: e88375e87842b144aa2dda2a80b3b4f3,
+    type: 2}
+  m_PrefabInternal: {fileID: 872298540}
+  m_Script: {fileID: 11500000, guid: 4f31b45de3c115e4291f6c1b1036729b, type: 3}
 --- !u!1001 &876356632
 Prefab:
   m_ObjectHideFlags: 0
@@ -8042,7 +8072,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 417310622}
+      objectReference: {fileID: 1474115266}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -8429,7 +8459,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 245035071}
+      objectReference: {fileID: 1213756675}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -8553,6 +8583,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e88375e87842b144aa2dda2a80b3b4f3, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &973223861 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000013189226664, guid: e88375e87842b144aa2dda2a80b3b4f3,
+    type: 2}
+  m_PrefabInternal: {fileID: 973223860}
+  m_Script: {fileID: 11500000, guid: 4f31b45de3c115e4291f6c1b1036729b, type: 3}
 --- !u!1 &983440919
 GameObject:
   m_ObjectHideFlags: 0
@@ -8695,6 +8731,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e88375e87842b144aa2dda2a80b3b4f3, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &990309177 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000013189226664, guid: e88375e87842b144aa2dda2a80b3b4f3,
+    type: 2}
+  m_PrefabInternal: {fileID: 990309176}
+  m_Script: {fileID: 11500000, guid: 4f31b45de3c115e4291f6c1b1036729b, type: 3}
 --- !u!1001 &993498126
 Prefab:
   m_ObjectHideFlags: 0
@@ -8746,7 +8788,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 560236346}
+      objectReference: {fileID: 397742757}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -9028,7 +9070,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1009723756}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -9132,7 +9174,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 2068846732}
+      objectReference: {fileID: 403202120}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -9256,6 +9298,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e88375e87842b144aa2dda2a80b3b4f3, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1019300604 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000013189226664, guid: e88375e87842b144aa2dda2a80b3b4f3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1019300603}
+  m_Script: {fileID: 11500000, guid: 4f31b45de3c115e4291f6c1b1036729b, type: 3}
 --- !u!1001 &1019926252
 Prefab:
   m_ObjectHideFlags: 0
@@ -9365,7 +9413,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 2110199785}
+      objectReference: {fileID: 487876211}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -9656,7 +9704,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1134141524}
+      objectReference: {fileID: 111951737}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -9773,7 +9821,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 790813226}
+      objectReference: {fileID: 1234427628}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -9890,7 +9938,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1452451060}
+      objectReference: {fileID: 560236346}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -10018,7 +10066,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 245035071}
+      objectReference: {fileID: 1778378485}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -10224,7 +10272,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 757475667}
+      objectReference: {fileID: 1134141524}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -10469,7 +10517,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1111073942}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -10664,7 +10712,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1963004915}
+      objectReference: {fileID: 757475667}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -10767,7 +10815,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1119890054}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -10892,7 +10940,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1533886352}
+      objectReference: {fileID: 1071133347}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -11009,7 +11057,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 417310622}
+      objectReference: {fileID: 1283550419}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -11184,7 +11232,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 590585440}
+      objectReference: {fileID: 820101783}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -11359,7 +11407,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1013877400}
+      objectReference: {fileID: 1510038639}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -11476,7 +11524,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1588966393}
+      objectReference: {fileID: 213121232}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -11733,7 +11781,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 560236346}
+      objectReference: {fileID: 125899140}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -12038,7 +12086,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 111951737}
+      objectReference: {fileID: 1302860141}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -12224,7 +12272,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 523055383}
+      objectReference: {fileID: 1812448918}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -12348,6 +12396,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e88375e87842b144aa2dda2a80b3b4f3, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1234427628 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000013189226664, guid: e88375e87842b144aa2dda2a80b3b4f3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1234427627}
+  m_Script: {fileID: 11500000, guid: 4f31b45de3c115e4291f6c1b1036729b, type: 3}
 --- !u!1 &1236696592
 GameObject:
   m_ObjectHideFlags: 0
@@ -12832,7 +12886,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1963004915}
+      objectReference: {fileID: 121843899}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -12940,7 +12994,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1270014303}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -13086,7 +13140,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 755954748}
+      objectReference: {fileID: 417310622}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -13258,7 +13312,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1290773993}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -13584,6 +13638,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e88375e87842b144aa2dda2a80b3b4f3, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1349908307 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000013189226664, guid: e88375e87842b144aa2dda2a80b3b4f3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1349908306}
+  m_Script: {fileID: 11500000, guid: 4f31b45de3c115e4291f6c1b1036729b, type: 3}
 --- !u!1001 &1354449982
 Prefab:
   m_ObjectHideFlags: 0
@@ -13635,7 +13695,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1071133347}
+      objectReference: {fileID: 1779497148}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -13843,6 +13903,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e88375e87842b144aa2dda2a80b3b4f3, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1372477685 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000013189226664, guid: e88375e87842b144aa2dda2a80b3b4f3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1372477684}
+  m_Script: {fileID: 11500000, guid: 4f31b45de3c115e4291f6c1b1036729b, type: 3}
 --- !u!1001 &1377285022
 Prefab:
   m_ObjectHideFlags: 0
@@ -13938,7 +14004,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1380837214}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -14036,7 +14102,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 722304995}
+      objectReference: {fileID: 196694950}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -14153,7 +14219,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 523055383}
+      objectReference: {fileID: 2085485924}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -14451,6 +14517,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e88375e87842b144aa2dda2a80b3b4f3, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1435525867 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000013189226664, guid: e88375e87842b144aa2dda2a80b3b4f3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1435525866}
+  m_Script: {fileID: 11500000, guid: 4f31b45de3c115e4291f6c1b1036729b, type: 3}
 --- !u!1 &1448881890
 GameObject:
   m_ObjectHideFlags: 0
@@ -14823,7 +14895,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1201234436}
+      objectReference: {fileID: 1435525867}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -15015,7 +15087,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1484587459}
+      objectReference: {fileID: 755954748}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -15144,6 +15216,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e88375e87842b144aa2dda2a80b3b4f3, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1510038639 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000013189226664, guid: e88375e87842b144aa2dda2a80b3b4f3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1510038638}
+  m_Script: {fileID: 11500000, guid: 4f31b45de3c115e4291f6c1b1036729b, type: 3}
 --- !u!1001 &1514340208
 Prefab:
   m_ObjectHideFlags: 0
@@ -15195,7 +15273,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 111951737}
+      objectReference: {fileID: 1019300604}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -15459,7 +15537,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1128823276}
+      objectReference: {fileID: 2059295797}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -15742,7 +15820,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1597297600}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -15935,7 +16013,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1283550419}
+      objectReference: {fileID: 1533886352}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -16038,7 +16116,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1643089902}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -16143,6 +16221,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e88375e87842b144aa2dda2a80b3b4f3, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1660256907 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000013189226664, guid: e88375e87842b144aa2dda2a80b3b4f3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1660256906}
+  m_Script: {fileID: 11500000, guid: 4f31b45de3c115e4291f6c1b1036729b, type: 3}
 --- !u!4 &1665278694 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000014275702142, guid: e88375e87842b144aa2dda2a80b3b4f3,
@@ -16243,7 +16327,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1674251613}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -16341,7 +16425,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 2068846732}
+      objectReference: {fileID: 245035071}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -16516,7 +16600,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 294263565}
+      objectReference: {fileID: 1128823276}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -16633,7 +16717,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 568858756}
+      objectReference: {fileID: 872298541}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -16750,7 +16834,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 2059295797}
+      objectReference: {fileID: 1860849502}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -16867,7 +16951,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1474115266}
+      objectReference: {fileID: 1879246061}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -16984,7 +17068,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1452451060}
+      objectReference: {fileID: 568858756}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -17137,7 +17221,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 2085485924}
+      objectReference: {fileID: 962237637}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -17396,7 +17480,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 820101783}
+      objectReference: {fileID: 478446242}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -17513,7 +17597,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1826571781}
+      objectReference: {fileID: 1276723465}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -17759,6 +17843,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e88375e87842b144aa2dda2a80b3b4f3, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1779497148 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000013189226664, guid: e88375e87842b144aa2dda2a80b3b4f3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1779497147}
+  m_Script: {fileID: 11500000, guid: 4f31b45de3c115e4291f6c1b1036729b, type: 3}
 --- !u!1001 &1779773599
 Prefab:
   m_ObjectHideFlags: 0
@@ -18011,7 +18101,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1164348475}
+      objectReference: {fileID: 1484587459}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -18262,6 +18352,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e88375e87842b144aa2dda2a80b3b4f3, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1812448918 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000013189226664, guid: e88375e87842b144aa2dda2a80b3b4f3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1812448917}
+  m_Script: {fileID: 11500000, guid: 4f31b45de3c115e4291f6c1b1036729b, type: 3}
 --- !u!4 &1817150801 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000014275702142, guid: e88375e87842b144aa2dda2a80b3b4f3,
@@ -18378,7 +18474,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1830587338}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -18753,7 +18849,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1881713809}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -19236,7 +19332,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1982162712}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -19498,7 +19594,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2039923310}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -19596,7 +19692,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 590585440}
+      objectReference: {fileID: 410792027}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -19719,7 +19815,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1630349434}
+      objectReference: {fileID: 1452451060}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -19836,7 +19932,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1276027388}
+      objectReference: {fileID: 1349908307}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -20133,7 +20229,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 397742757}
+      objectReference: {fileID: 590585440}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -20310,7 +20406,7 @@ Prefab:
         type: 2}
       propertyPath: customGoal
       value: 
-      objectReference: {fileID: 1879246061}
+      objectReference: {fileID: 1372477685}
     - target: {fileID: 114000011666200272, guid: 9a37cac0a02f95048b724752dcbcf0c2,
         type: 2}
       propertyPath: spawnerColor.r
@@ -20560,7 +20656,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2147000437}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

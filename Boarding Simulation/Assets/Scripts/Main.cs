@@ -240,7 +240,7 @@ public class Main : MonoBehaviour {
 	//	Debug.Log ("Agent update took: " + s.ElapsedMilliseconds + " ms");
 		//Pair-wise collision handling between agents
 
-		// OSCAR COMMENTED OUT
+		// OSCAR COMMENTED OUT, update: Don't remember why but if it works it works right? hehe
 		// Grid.instance.collisionHandling(ref agentList);
 
 		//	Debug.Log ("Collision handling took: " + s.ElapsedMilliseconds + " ms");

@@ -17,13 +17,11 @@ public class Agent : MonoBehaviour {
 	internal bool stop = false; // OSCAR
 	internal bool stopAll = false; // OSCAR
 	internal bool stopForCollision = false; // OSCAR
-	internal bool slowDown = false; // OSCAR
 	internal bool stowLuggage = false; // OSCAR
 	internal int stopCount = 0; // OSCAR
 	internal int agentNumber = 1000; // OSCAR
 	internal int agentCounter = 1; // OSCAR
 	internal int stopNumber;
-	internal int haveLuggage = 100; // Implementera denna
 	internal Vector3 previousVelocity; // OSCAR
 	internal bool done = false;
 	internal bool noMap = false;
@@ -39,7 +37,6 @@ public class Agent : MonoBehaviour {
 		animator = transform.gameObject.GetComponent<Animator> ();
 		rbody = transform.gameObject.GetComponent<Rigidbody> ();
 		//Which cell am i in currently?
-		// rbody.isKinematic = true;
 		calculateRowAndColumn();
 		if (!Grid.instance.colHandler && rbody != null) {
 			Destroy (rbody);
@@ -84,25 +81,13 @@ public class Agent : MonoBehaviour {
 		transform.forward = velocity.normalized;
 		velocity = velocity + collisionAvoidanceVelocity;
 
-		// MAYBE MAKE AISLE WIDER BUT I WANT IT TO WORK
-
-		// if (stopAll && stopForCollision) {
-
 		if (stopAll && stopCount != 1 && agentNumber > stopNumber) {
-			// UnityEngine.Debug.Log("IN STOP ALL"); //OSCAR
-			// rbody.isKinematic = true;
 			velocity.x = 0; // OSCAR
 			velocity.z = 0; // OSCAR
 			Delay(5000).ContinueWith(_ => stopAll = false);
 		}
-		// rbody.isKinematic = false;
 
-		// if (slowDown) {
-		// 	velocity.x = 0.4f; // OSCAR
-		// 	velocity.z = 0.4f; // OSCAR
-		// }
 		if (velocity.x == 0 ) {
-			// UnityEngine.Debug.Log("ZERO"); //OSCAR
 			stopAll = true;
 		}
 
@@ -113,17 +98,10 @@ public class Agent : MonoBehaviour {
 		}
 
 		if (stop) { // OSCAR
-			// previousVelocity = velocity; // OSCAR
-			// stopAll = true;
-
 			if (stopCount == 0) {
 				stowLuggage = true;
-				// velocity.x = 0; // OSCAR
-				// velocity.y = 0; // OSCAR
-				// velocity.z = 0; // OSCAR
 
 				velocity.x = 0; // OSCAR
-				// float previousVelocityZ = velocity.z;
 				velocity.z = 0; // OSCAR
 				rbody.isKinematic = true;
 
@@ -131,26 +109,16 @@ public class Agent : MonoBehaviour {
 				int luggageTime = rand.Next(2000, 6000);
 				UnityEngine.Debug.Log("RANDOM: " + luggageTime); //OSCAR
 				
-				// Delay(3000).ContinueWith(_ => setPreviousVelocity());
 				Delay(luggageTime).ContinueWith(_ => stowLuggage = false);
 				Delay(luggageTime + 1500).ContinueWith(_ => stop = false);
 				stopCount++;
 			} else {
 
 			}
-
-		// 	// Task.Delay(1000);
-		// 	// velocity.x = 0; // OSCAR
-		// 	// velocity.y = 0; // OSCAR
-		// 	// velocity.z = 0; // OSCAR
-		// 	// if (collision) {
-		// 	// 	UnityEngine.Debug.Log("COLLISION"); //OSCAR
-		// 	// }
 		}
 	}
 
 	internal void setPreviousVelocity() {
-		// velocity = previousVelocity; 
 		stop = false;
 		stopAll = false;
 	}
@@ -186,9 +154,6 @@ public class Agent : MonoBehaviour {
 	internal void calculatePreferredVelocityMap(ref MapGen.map map) {
 		previousDirection = preferredVelocity.normalized;
 		if ((transform.position - map.allNodes [path [pathIndex]].getTargetPoint(transform.position)).magnitude < map.allNodes[path[pathIndex]].getThreshold() || (Grid.instance.skipNodeIfSeeNext && canSeeNext(ref map, 1))) {
-			// preferredVelocity.x = 0; // OSCAR
-			// preferredVelocity.y = 0; // OSCAR
-			// preferredVelocity.z = 0; // OSCAR
 
 			bool turning = map.allNodes [path [pathIndex]].isGoal; //OSCAR
 			if (turning && stopCount == 0) {
@@ -198,7 +163,6 @@ public class Agent : MonoBehaviour {
 
 			//New node reached
 			collision = false;
-			// stopAll = false; // OSCAR
 			pathIndex += 1;
 			if (pathIndex >= path.Count) {
 				//Done
@@ -216,7 +180,6 @@ public class Agent : MonoBehaviour {
 			change = false;
 		} else {
 			collision = false;
-			// stopAll = false; // OSCAR
 			Vector3 nextDirection = ((map.allNodes [path [pathIndex]].getTargetPoint(transform.position)) - transform.position).normalized;
 			if (change && Vector3.Angle (previousDirection, nextDirection) > 20.0f && Grid.instance.smoothTurns) {
 				preferredVelocity = Vector3.RotateTowards (velocity.normalized, nextDirection, Grid.instance.dt*((35.0f - 400*Grid.instance.dt) * Mathf.PI / 180.0f),  15.0f).normalized;
@@ -225,7 +188,6 @@ public class Agent : MonoBehaviour {
 				preferredVelocity = ((map.allNodes [path [pathIndex]].getTargetPoint (transform.position)) - transform.position).normalized;
 			}
 		}
-		//collision = false;
 		preferredVelocity = preferredVelocity * Grid.instance.agentMaxSpeed;
 		preferredVelocity.y = 0f;
 	}
@@ -257,54 +219,41 @@ public class Agent : MonoBehaviour {
 	 * Do animations.
 	 **/
 	internal void changePosition(ref MapGen.map map) {
-		// OSCAR - THIS MIGHT BE WHEN THEY ARE AT THE GOAL
 		if (done) {
 			return; // Dont do anything
 		} 
 		calculatePreferredVelocity(ref map);
 
-		// if(stopAll) {
-		// 	animator.speed = 0;
-		// } else {
-			setCorrectedVelocity ();
-			prevPos = transform.position;
 
-			Vector3 nextPos = transform.position + velocity * Grid.instance.dt; nextPos.y = 3.0f;
+		setCorrectedVelocity ();
+		prevPos = transform.position;
 
-			transform.position += velocity * Grid.instance.dt;
+		Vector3 nextPos = transform.position + velocity * Grid.instance.dt; nextPos.y = 3.0f;
+
+		transform.position += velocity * Grid.instance.dt;
 
 
-			if(rbody != null)
-				rbody.velocity = Vector3.zero;
+		if(rbody != null)
+			rbody.velocity = Vector3.zero;
 
 
-			collisionAvoidanceVelocity = Vector3.zero;
+		collisionAvoidanceVelocity = Vector3.zero;
 
-			float realSpeed = Vector3.Distance (transform.position, prevPos) / Mathf.Max(Grid.instance.dt, Time.deltaTime);
-			if (animator != null) {
-		
-				if (realSpeed < 0.05f) {
-					animator.speed = 0;
-				} else {
-					animator.speed = (realSpeed) / Grid.instance.agentMaxSpeed;
-				}
+		float realSpeed = Vector3.Distance (transform.position, prevPos) / Mathf.Max(Grid.instance.dt, Time.deltaTime);
+		if (animator != null) {
+	
+			if (realSpeed < 0.05f) {
+				animator.speed = 0;
+			} else {
+				animator.speed = (realSpeed) / Grid.instance.agentMaxSpeed;
 			}
-		// }
-
+		}
 	}
 
 	internal void OnCollisionEnter(Collision c) {
 		collision = true;
-		// stopForCollision = true;
 		if (stopForCollision) {
 			stopAll = true;
-			// UnityEngine.Debug.Log("COLLISION"); //OSCAR
-			// stopAll = true;
-			// System.Threading.Thread.Sleep(4000);
-			// stop = false;
-			// velocity = previousVelocity;
-			// UnityEngine.Debug.Log("COLLISION"); //OSCAR
-			// LAST SOLUTION: if stopCount == 0 -> sleep for 4s; stopCount++;
 		}
 	}
 	/**
