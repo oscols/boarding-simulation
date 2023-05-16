@@ -14,6 +14,7 @@ public class Agent : MonoBehaviour {
 	neighbourRightVelocityWeight, neighbourLeftVelocityWeight, neighbourUpperVelocityWeight, neighbourLowerVelocityWeight;
 	internal float densityAtAgentPosition;
 
+	internal bool tempStop = false; // TIM
 	internal bool stop = false; // OSCAR
 	internal bool stopAll = false; // OSCAR
 	internal bool stopForCollision = false; // OSCAR
@@ -39,6 +40,10 @@ public class Agent : MonoBehaviour {
 		if (!Grid.instance.colHandler && rbody != null) {
 			Destroy (rbody);
 		}
+	}
+
+	public void ping() {
+		Debug.Log("Ping!!");
 	}
 
 	internal void calculateRowAndColumn() {
@@ -92,18 +97,19 @@ public class Agent : MonoBehaviour {
 
 		// Maybe if within radius, just stop?
 
-		if (stop) { // OSCAR
+		if (stop || tempStop) { // OSCAR
 			// previousVelocity = velocity; // OSCAR
 			// stopAll = true;
 			velocity.x = 0; // OSCAR
 			velocity.z = 0; // OSCAR
 			rbody.isKinematic = true;
-			if (stopCount == 0) {
+			if (stopCount == 0 && !tempStop) {
 				// velocity.x = 0; // OSCAR
 				// velocity.y = 0; // OSCAR
 				// velocity.z = 0; // OSCAR
-				
-				Delay(300).ContinueWith(_ => setPreviousVelocity());
+				float delayTime = Random.Range(2.0f, 6.0f);
+				Debug.Log("Stopping for... "+delayTime+" seconds");
+				Delay(delayTime*1000).ContinueWith(_ => setPreviousVelocity());
 				stopCount++;
 			}
 
@@ -120,6 +126,7 @@ public class Agent : MonoBehaviour {
 	internal void setPreviousVelocity() {
 		// velocity = previousVelocity; 
 		stop = false;
+		tempStop = false;
 		stopAll = false;
 	}
 
