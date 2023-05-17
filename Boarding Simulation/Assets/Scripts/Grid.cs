@@ -460,7 +460,7 @@ public class Grid : MonoBehaviour {
 				// 72 for Wilma
 				// 72 for Steffen
 				// 72 for Random
-				if (numOfStopped > 72) {
+				if (numOfStopped > 2) {
 					agentList[i].stopAll = true;
 				}
 			}

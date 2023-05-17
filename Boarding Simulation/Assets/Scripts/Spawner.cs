@@ -37,6 +37,8 @@ public class Spawner : MonoBehaviour {
 	internal float percentOfThreeInGroup;
 	internal float percentOfFourInGroup;
 
+	internal int goalNumber = 1; // OSCAR
+
 	public void init(ref GameObject agentModels, ref GameObject subgroupModels, ref Agent manShirtColor, 
 					 ref MapGen.map map,  ref List<Agent> agentList, Vector2 X, Vector2 Z, float agentAvoidanceRadius, bool useSimpleAgents,
 					bool useGroupedAgents, float individualAgents, float percentOfTwoInGroup, float percentOfThreeInGroup, float percentOfFourInGroup) {
@@ -344,5 +346,69 @@ public class Spawner : MonoBehaviour {
 		}
 		StartCoroutine (spawnContinously(startNode, goal, cap, spawnRate));
 	}
+
+
+	// OSCAR 
+	// internal IEnumerator spawnContinously(int start, int goal, int cap, float continousSpawnRate) {
+	// 	UnityEngine.Debug.Log(goalNumber); //OSCAR
+	// 	goal = goalNumber;
+	// 	goalNumber++;
+	// 	float spawnSizeX = transform.localScale.x;
+	// 	float spawnSizeZ = transform.localScale.z;
+	
+	// 	if (agentList.Count < cap) {
+	// 		Vector3 startPos = new Vector3 (Random.Range (-0.5f, 0.5f), 0.15f, Random.Range (-0.5f, 0.5f)); startPos = transform.TransformPoint (startPos);
+	// 		float randomRange = Random.Range(0.0f, 1.0f);
+	// 		if (!useGroupedAgents || randomRange < individualAgents) {
+	// 			Agent a;
+	// 			if (useSimpleAgents) {
+	// 				a = Instantiate (manShirtColor) as Agent;
+	// 			} else {
+	// 				a = Instantiate (agentModels.transform.GetChild(Random.Range(0, agentModels.transform.childCount)).GetComponent<Agent>()) as Agent;
+	// 			}
+	// 			initAgent (ref a, startPos, start, goal, 1);
+	// 			agentList.Add (a);
+	// 		} else {
+	// 			int groupSize;
+	// 			if (randomRange - individualAgents < percentOfTwoInGroup) {
+	// 				groupSize = 2;
+	// 			} else if (randomRange - individualAgents - percentOfTwoInGroup < percentOfThreeInGroup) {
+	// 				groupSize = 3;
+	// 			} else {
+	// 				groupSize = 4;
+	// 			}
+	// 			List<SubgroupAgent> liA = initGroupAgent (groupSize, startPos, start, goal, 1);
+	// 			for (int i = 0; i < liA.Count; ++i) {
+	// 				agentList.Add ((Agent)liA [i]);
+	// 			}
+	// 		}
+
+
+
+	// 	//	float agentRelPosRight = Vector3.Dot(a.transform.position - transform.localPosition, transform.right);
+	// 	//	float agentRelPosForward = Vector3.Dot(a.transform.position  - transform.localPosition, transform.forward);
+	// 	//	a.preferredVelocity = new Vector3 (a.preferredVelocity.x * (-agentRelPosRight / transform.localScale.x), a.preferredVelocity.y, a.preferredVelocity.z * (agentRelPosForward / transform.localScale.z));
+
+	// 	}
+	// 	yield return new WaitForSeconds (continousSpawnRate);
+	// 	cap--; // OSCAR
+	// 	StartCoroutine (spawnContinously(start, goal, cap, continousSpawnRate));
+	// }
+
+	// // OSCAR
+	// public void continousSpawn(int startNode, int cap) {
+	// 	cap = 72; // OSCAR
+	// 	int goal = map.goals[0];
+	// 	if (customGoal != null) {
+	// 		//OPT: Use dictionary in mapgen to get constant time access!
+	// 		for(int i = 0; i < map.allNodes.Count; ++i) {
+	// 			if (map.allNodes [i].transform.position == customGoal.transform.position) {
+	// 				goal = i;
+	// 				break;
+	// 			}
+	// 		}
+	// 	}
+	// 	StartCoroutine (spawnContinously(startNode, goalNumber, cap, spawnRate));
+	// }
 
 }
