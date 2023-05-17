@@ -7,20 +7,17 @@ public class Queue : MonoBehaviour {
 
 	internal List<Agent> agents;
 	internal int numOfAgents;
-	internal float timer;
-	internal bool calcTime;
+	public SimTimer simTimer;
 
 	// Use this for initialization
 	void Start () {
         agents = new List<Agent>();
 		numOfAgents = 0;
-		timer = 0;
-		calcTime = false;
 		UpdateStats();
 	}
 	
 	void UpdateStats () {
-		Debug.Log(numOfAgents + " entered, " + GetRemaining() + " remaining, " + timer + "s passed");
+		Debug.Log(numOfAgents + " entered, " + GetRemaining() + " remaining, " + simTimer.timer + "s passed");
 	}
 
 	int GetRemaining() {
@@ -38,14 +35,12 @@ public class Queue : MonoBehaviour {
 			}
 		}
 
-		if(calcTime) {
+		if(simTimer.calcTime) {
 			if(GetRemaining() == 0) {
-				calcTime = false;
+				simTimer.calcTime = false;
 				Debug.Log("Timer stopped! All agents have found their seats!");
-				Debug.Log("Time taken: " + timer);
+				Debug.Log("Time taken: " + simTimer.timer);
 			} else {
-				timer += Time.deltaTime;
-
 				for(int i = 1; i < agents.Count; i++) {
 					if((agents[i-1].stop || agents[i-1].tempStop) && Vector3.Distance(agents[i-1].gameObject.transform.position, agents[i].gameObject.transform.position) < 3) {
 						agents[i].tempStop = true;
@@ -61,10 +56,6 @@ public class Queue : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
-		if(!calcTime) {
-			calcTime = true; // Start Timer
-			Debug.Log("Timer Started!");
-		}
 		numOfAgents++;
 		agents.Add(other.GetComponent<Agent>());
 		UpdateStats();

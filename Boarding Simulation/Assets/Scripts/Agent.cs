@@ -107,8 +107,7 @@ public class Agent : MonoBehaviour {
 				// velocity.x = 0; // OSCAR
 				// velocity.y = 0; // OSCAR
 				// velocity.z = 0; // OSCAR
-				float delayTime = Random.Range(2.0f, 6.0f);
-				Debug.Log("Stopping for... "+delayTime+" seconds");
+				float delayTime = Random.Range(2.0f, 4.0f);
 				Delay(delayTime*1000).ContinueWith(_ => setPreviousVelocity());
 				stopCount++;
 			}

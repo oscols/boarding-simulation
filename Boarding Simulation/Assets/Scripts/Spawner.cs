@@ -30,6 +30,7 @@ public class Spawner : MonoBehaviour {
 
 	internal Dictionary<string, int> skins;
 
+	public GoalDirector goalDirector; // TIM
 
 	internal bool useGroupedAgents;
 	internal float individualAgents;
@@ -291,6 +292,17 @@ public class Spawner : MonoBehaviour {
 		float spawnSizeX = transform.localScale.x;
 		float spawnSizeZ = transform.localScale.z;
 	
+		customGoal = goalDirector.getGoal();
+		if (customGoal != null) {
+			//OPT: Use dictionary in mapgen to get constant time access!
+			for(int i = 0; i < map.allNodes.Count; ++i) {
+				if (map.allNodes [i].transform.position == customGoal.transform.position) {
+					goal = i;
+					break;
+				}
+			}
+		}
+
 		if (agentList.Count < cap) {
 			Vector3 startPos = new Vector3 (Random.Range (-0.5f, 0.5f), 0.15f, Random.Range (-0.5f, 0.5f)); startPos = transform.TransformPoint (startPos);
 			float randomRange = Random.Range(0.0f, 1.0f);
@@ -324,15 +336,18 @@ public class Spawner : MonoBehaviour {
 		//	float agentRelPosForward = Vector3.Dot(a.transform.position  - transform.localPosition, transform.forward);
 		//	a.preferredVelocity = new Vector3 (a.preferredVelocity.x * (-agentRelPosRight / transform.localScale.x), a.preferredVelocity.y, a.preferredVelocity.z * (agentRelPosForward / transform.localScale.z));
 
+		} else {
+			cap = 0;
 		}
+
 		yield return new WaitForSeconds (continousSpawnRate);
-		cap--; // OSCAR
 		StartCoroutine (spawnContinously(start, goal, cap, continousSpawnRate));
 	}
 
 	public void continousSpawn(int startNode, int cap) {
 		cap = 72; // OSCAR
 		int goal = map.goals[0];
+		
 		if (customGoal != null) {
 			//OPT: Use dictionary in mapgen to get constant time access!
 			for(int i = 0; i < map.allNodes.Count; ++i) {

@@ -17,6 +17,7 @@ public class Main : MonoBehaviour {
 		mprgpmic0,
 		psor
 	}
+	
 	public float epsilon;
 	public int solverMaxIterations;
 	public LCPSolutioner solver;
