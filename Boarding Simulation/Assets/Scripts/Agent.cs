@@ -14,6 +14,9 @@ public class Agent : MonoBehaviour {
 	neighbourRightVelocityWeight, neighbourLeftVelocityWeight, neighbourUpperVelocityWeight, neighbourLowerVelocityWeight;
 	internal float densityAtAgentPosition;
 
+	public float minWait = 2; // TIM
+	public float maxWait = 4;
+
 	internal bool tempStop = false; // TIM
 	internal bool stop = false; // OSCAR
 	internal bool stopAll = false; // OSCAR
@@ -40,10 +43,6 @@ public class Agent : MonoBehaviour {
 		if (!Grid.instance.colHandler && rbody != null) {
 			Destroy (rbody);
 		}
-	}
-
-	public void ping() {
-		Debug.Log("Ping!!");
 	}
 
 	internal void calculateRowAndColumn() {
@@ -107,7 +106,7 @@ public class Agent : MonoBehaviour {
 				// velocity.x = 0; // OSCAR
 				// velocity.y = 0; // OSCAR
 				// velocity.z = 0; // OSCAR
-				float delayTime = Random.Range(2.0f, 4.0f);
+				float delayTime = Random.Range(minWait, maxWait);
 				Delay(delayTime*1000).ContinueWith(_ => setPreviousVelocity());
 				stopCount++;
 			}
