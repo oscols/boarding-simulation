@@ -47,7 +47,7 @@ public class Agent : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 		if(other.gameObject.name == "Counter") {
 			agentNumber = agentCounter;
-			// UnityEngine.Debug.Log("I get number: " + agentNumber + " :)"); //OSCAR
+			UnityEngine.Debug.Log("I get number: " + agentNumber + " :)"); //OSCAR
 		}
 	}
 
@@ -106,7 +106,8 @@ public class Agent : MonoBehaviour {
 				rbody.isKinematic = true;
 
 				System.Random rand = new System.Random();
-				int luggageTime = rand.Next(2000, 4000);
+				// int luggageTime = rand.Next(2000, 4000);
+				int luggageTime = 10;
 				// UnityEngine.Debug.Log("RANDOM: " + luggageTime); //OSCAR
 				
 				Delay(luggageTime).ContinueWith(_ => stowLuggage = false);

@@ -5152,7 +5152,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000012297000160, guid: 9a37cac0a02f95048b724752dcbcf0c2, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 140.7
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 4000012297000160, guid: 9a37cac0a02f95048b724752dcbcf0c2, type: 2}
       propertyPath: m_LocalPosition.y
@@ -9475,7 +9475,7 @@ Prefab:
     - target: {fileID: 114000011453258514, guid: ead6e50105b8a264ab4274d310eab2f7,
         type: 2}
       propertyPath: agentMaxSpeed
-      value: 1.2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114000011453258514, guid: ead6e50105b8a264ab4274d310eab2f7,
         type: 2}

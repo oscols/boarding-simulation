@@ -38,7 +38,29 @@ public class Spawner : MonoBehaviour {
 	internal float percentOfFourInGroup;
 
 	internal int goalNumber = 1; // OSCAR
+	internal List<string> blockOne = new List<string>() {"Seat49", "Seat50", "Seat51", "Seat52", "Seat53", "Seat54", "Seat55", "Seat56", "Seat57", "Seat58", "Seat59", "Seat60", "Seat61",
+	"Seat62", "Seat63", "Seat64", "Seat65", "Seat66", "Seat67", "Seat68", "Seat69", "Seat70", "Seat71", "Seat72"};
+	internal List<string> blockTwo = new List<string>() {"Seat1", "Seat2", "Seat3", "Seat4", "Seat5", "Seat6", "Seat7", "Seat8", "Seat9", "Seat10", "Seat11", "Seat12", "Seat13",
+	"Seat14", "Seat15", "Seat16", "Seat17", "Seat18", "Seat19", "Seat20", "Seat21", "Seat22", "Seat23", "Seat24"};
+	internal List<string> blockThree = new List<string>() {"Seat25", "Seat26", "Seat27", "Seat28", "Seat29", "Seat30", "Seat31", "Seat32", "Seat33", "Seat34", "Seat35", "Seat36", "Seat37",
+	"Seat38", "Seat39", "Seat40", "Seat41", "Seat42", "Seat43", "Seat44", "Seat45", "Seat46", "Seat47", "Seat48"};
 
+	internal List<string> random = new List<string>() {"Seat1", "Seat2", "Seat3", "Seat4", "Seat5", "Seat6", "Seat7", "Seat8", "Seat9", "Seat10", "Seat11", "Seat12", "Seat13",
+	"Seat14", "Seat15", "Seat16", "Seat17", "Seat18", "Seat19", "Seat20", "Seat21", "Seat22", "Seat23", "Seat24", "Seat25", "Seat26", "Seat27", "Seat28", "Seat29", "Seat30",
+	"Seat31", "Seat32", "Seat33", "Seat34", "Seat35", "Seat36", "Seat37", "Seat38", "Seat39", "Seat40", "Seat41", "Seat42", "Seat43", "Seat44", "Seat45", "Seat46", "Seat47", 
+	"Seat48", "Seat49", "Seat50", "Seat51", "Seat52", "Seat53", "Seat54", "Seat55", "Seat56", "Seat57", "Seat58", "Seat59", "Seat60", "Seat61",
+	"Seat62", "Seat63", "Seat64", "Seat65", "Seat66", "Seat67", "Seat68", "Seat69", "Seat70", "Seat71", "Seat72"};
+
+	internal List<string> wilmaOne = new List<string>() {"Seat1", "Seat6", "Seat7", "Seat12", "Seat13", "Seat18", "Seat19", "Seat24", "Seat25", "Seat30", "Seat31", "Seat36", "Seat37",
+	"Seat42", "Seat43", "Seat48", "Seat49", "Seat54", "Seat55", "Seat60", "Seat61", "Seat66", "Seat67", "Seat72"};
+
+	internal List<string> wilmaTwo = new List<string>() {"Seat2", "Seat5", "Seat8", "Seat11", "Seat14", "Seat17", "Seat20", "Seat23", "Seat26", "Seat29", "Seat32", "Seat35", "Seat38",
+	"Seat41", "Seat44", "Seat47", "Seat50", "Seat53", "Seat56", "Seat59", "Seat62", "Seat65", "Seat68", "Seat71"};
+
+	internal List<string> wilmaThree = new List<string>() {"Seat3", "Seat4", "Seat9", "Seat10", "Seat15", "Seat16", "Seat21", "Seat22", "Seat27", "Seat28", "Seat33", "Seat34", "Seat39",
+	"Seat40", "Seat45", "Seat46", "Seat51", "Seat52", "Seat57", "Seat58", "Seat63", "Seat64", "Seat69", "Seat70"};
+
+ 
 	public void init(ref GameObject agentModels, ref GameObject subgroupModels, ref Agent manShirtColor, 
 					 ref MapGen.map map,  ref List<Agent> agentList, Vector2 X, Vector2 Z, float agentAvoidanceRadius, bool useSimpleAgents,
 					bool useGroupedAgents, float individualAgents, float percentOfTwoInGroup, float percentOfThreeInGroup, float percentOfFourInGroup) {
@@ -289,70 +311,7 @@ public class Spawner : MonoBehaviour {
 	}
 
 
-	internal IEnumerator spawnContinously(int start, int goal, int cap, float continousSpawnRate) {
-		float spawnSizeX = transform.localScale.x;
-		float spawnSizeZ = transform.localScale.z;
-	
-		if (agentList.Count < cap) {
-			Vector3 startPos = new Vector3 (Random.Range (-0.5f, 0.5f), 0.15f, Random.Range (-0.5f, 0.5f)); startPos = transform.TransformPoint (startPos);
-			float randomRange = Random.Range(0.0f, 1.0f);
-			if (!useGroupedAgents || randomRange < individualAgents) {
-				Agent a;
-				if (useSimpleAgents) {
-					a = Instantiate (manShirtColor) as Agent;
-				} else {
-					a = Instantiate (agentModels.transform.GetChild(Random.Range(0, agentModels.transform.childCount)).GetComponent<Agent>()) as Agent;
-				}
-				initAgent (ref a, startPos, start, goal, 1);
-				agentList.Add (a);
-			} else {
-				int groupSize;
-				if (randomRange - individualAgents < percentOfTwoInGroup) {
-					groupSize = 2;
-				} else if (randomRange - individualAgents - percentOfTwoInGroup < percentOfThreeInGroup) {
-					groupSize = 3;
-				} else {
-					groupSize = 4;
-				}
-				List<SubgroupAgent> liA = initGroupAgent (groupSize, startPos, start, goal, 1);
-				for (int i = 0; i < liA.Count; ++i) {
-					agentList.Add ((Agent)liA [i]);
-				}
-			}
-
-
-
-		//	float agentRelPosRight = Vector3.Dot(a.transform.position - transform.localPosition, transform.right);
-		//	float agentRelPosForward = Vector3.Dot(a.transform.position  - transform.localPosition, transform.forward);
-		//	a.preferredVelocity = new Vector3 (a.preferredVelocity.x * (-agentRelPosRight / transform.localScale.x), a.preferredVelocity.y, a.preferredVelocity.z * (agentRelPosForward / transform.localScale.z));
-
-		}
-		yield return new WaitForSeconds (continousSpawnRate);
-		cap--; // OSCAR
-		StartCoroutine (spawnContinously(start, goal, cap, continousSpawnRate));
-	}
-
-	public void continousSpawn(int startNode, int cap) {
-		cap = 72; // OSCAR
-		int goal = map.goals[0];
-		if (customGoal != null) {
-			//OPT: Use dictionary in mapgen to get constant time access!
-			for(int i = 0; i < map.allNodes.Count; ++i) {
-				if (map.allNodes [i].transform.position == customGoal.transform.position) {
-					goal = i;
-					break;
-				}
-			}
-		}
-		StartCoroutine (spawnContinously(startNode, goal, cap, spawnRate));
-	}
-
-
-	// OSCAR 
 	// internal IEnumerator spawnContinously(int start, int goal, int cap, float continousSpawnRate) {
-	// 	UnityEngine.Debug.Log(goalNumber); //OSCAR
-	// 	goal = goalNumber;
-	// 	goalNumber++;
 	// 	float spawnSizeX = transform.localScale.x;
 	// 	float spawnSizeZ = transform.localScale.z;
 	
@@ -395,7 +354,6 @@ public class Spawner : MonoBehaviour {
 	// 	StartCoroutine (spawnContinously(start, goal, cap, continousSpawnRate));
 	// }
 
-	// // OSCAR
 	// public void continousSpawn(int startNode, int cap) {
 	// 	cap = 72; // OSCAR
 	// 	int goal = map.goals[0];
@@ -408,7 +366,96 @@ public class Spawner : MonoBehaviour {
 	// 			}
 	// 		}
 	// 	}
-	// 	StartCoroutine (spawnContinously(startNode, goalNumber, cap, spawnRate));
+	// 	StartCoroutine (spawnContinously(startNode, goal, cap, spawnRate));
 	// }
 
+
+	public string getSeat(ref List<string> seats) {
+		int seat = Random.Range(0, seats.Count);
+		string seatName = seats[seat];
+		seats.RemoveAt(seat);
+		return seatName;
+	}
+
+	public CustomNode getGoal() {
+		string seatName = "Seat1";
+		if (blockOne.Count > 0)
+			seatName = getSeat(ref blockOne);
+		else if (blockTwo.Count  > 0)
+			seatName = getSeat(ref blockTwo);
+		else if (blockThree.Count  > 0)
+			seatName = getSeat(ref blockThree); 
+		return GameObject.Find(seatName).GetComponent<CustomNode>();
+	}
+
+
+	// OSCAR 
+	internal IEnumerator spawnContinously(int start, int goal, int cap, float continousSpawnRate) {
+		float spawnSizeX = transform.localScale.x;
+		float spawnSizeZ = transform.localScale.z;
+		
+		customGoal = getGoal();
+		if (customGoal != null) {
+			//OPT: Use dictionary in mapgen to get constant time access!
+			for(int i = 0; i < map.allNodes.Count; ++i) {
+				if (map.allNodes [i].transform.position == customGoal.transform.position) {
+					goal = i;
+					break;
+				}
+			}
+		}
+		if (agentList.Count < cap) {
+			Vector3 startPos = new Vector3 (Random.Range (-0.5f, 0.5f), 0.15f, Random.Range (-0.5f, 0.5f)); startPos = transform.TransformPoint (startPos);
+			float randomRange = Random.Range(0.0f, 1.0f);
+			if (!useGroupedAgents || randomRange < individualAgents) {
+				Agent a;
+				if (useSimpleAgents) {
+					a = Instantiate (manShirtColor) as Agent;
+				} else {
+					a = Instantiate (agentModels.transform.GetChild(Random.Range(0, agentModels.transform.childCount)).GetComponent<Agent>()) as Agent;
+				}
+				initAgent (ref a, startPos, start, goal, 1);
+				agentList.Add (a);
+			} else {
+				int groupSize;
+				if (randomRange - individualAgents < percentOfTwoInGroup) {
+					groupSize = 2;
+				} else if (randomRange - individualAgents - percentOfTwoInGroup < percentOfThreeInGroup) {
+					groupSize = 3;
+				} else {
+					groupSize = 4;
+				}
+				List<SubgroupAgent> liA = initGroupAgent (groupSize, startPos, start, goal, 1);
+				for (int i = 0; i < liA.Count; ++i) {
+					agentList.Add ((Agent)liA [i]);
+				}
+			}
+
+		//	float agentRelPosRight = Vector3.Dot(a.transform.position - transform.localPosition, transform.right);
+		//	float agentRelPosForward = Vector3.Dot(a.transform.position  - transform.localPosition, transform.forward);
+		//	a.preferredVelocity = new Vector3 (a.preferredVelocity.x * (-agentRelPosRight / transform.localScale.x), a.preferredVelocity.y, a.preferredVelocity.z * (agentRelPosForward / transform.localScale.z));
+
+		} else {
+			cap = 0;
+		}
+		yield return new WaitForSeconds (continousSpawnRate);
+		StartCoroutine (spawnContinously(start, goal, cap, continousSpawnRate));
+	}
+
+	// OSCAR
+	public void continousSpawn(int startNode, int cap) {
+		cap = 72; // OSCAR
+		int goal = map.goals[0];
+		
+		if (customGoal != null) {
+			//OPT: Use dictionary in mapgen to get constant time access!
+			for(int i = 0; i < map.allNodes.Count; ++i) {
+				if (map.allNodes [i].transform.position == customGoal.transform.position) {
+					goal = i;
+					break;
+				}
+			}
+		}
+		StartCoroutine (spawnContinously(startNode, goal, cap, spawnRate));
+	}
 }
